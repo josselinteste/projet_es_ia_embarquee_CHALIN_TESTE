@@ -29,4 +29,20 @@ La seconde partie porte sur le **déploiement du modèle conçu** sur la cible *
 ---
 
 ## 📁 Structure du projet
+├── Partie_1_Conception/
+│ ├── Pruning.pdf
+│ ├── notebook_pruning.ipynb
+│ └── ...
+│
+├── Partie_2_Deployment/
+│ ├── model_converted/
+│ ├── stm32_deployment_files/
+│ └── ...
+│
+└── README.md
 
+---
+
+## 🧩 Objectif global
+
+L’objectif du projet est de **proposer une méthodologie complète** allant de la conception d’un modèle de classification optimisé à son **déploiement sur une cible embarquée à ressources limitées**.
