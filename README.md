@@ -1,2 +1,3 @@
-# projet_es_ia_embarquee
+# Déploiement d’un modèle DNN préentraîné sur le dataset CIFAR-10 pour microcontrôleur
+
 Test push 
