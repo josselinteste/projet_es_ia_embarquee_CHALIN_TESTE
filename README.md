@@ -14,7 +14,9 @@ Cette première partie concerne la **conception et l’optimisation** du modèle
 
 ### Contenu :
 - **`Pruning.pdf`** — rapport détaillant la méthode de pruning et les choix d’architecture ;  
-- **Notebook Jupyter** — démonstration pratique de la méthode de pruning appliquée au modèle.
+- **Pruning.ipynb** — démonstration pratique de la méthode de pruning appliquée au modèle.
+- **Conception.pdf**
+- **Entrainement_Evaluation.ipynb**
 
 ---
 
@@ -26,23 +28,6 @@ La seconde partie porte sur le **déploiement du modèle conçu** sur la cible *
 - **Fichiers de déploiement** pour le microcontrôleur ;  
 - **Modèle converti** et prêt à être intégré sur la plateforme embarquée.
 
----
-
-## 📁 Structure du projet
-
-\```
-├── Partie_1_Conception/
-│   ├── Pruning.pdf
-│   ├── notebook_pruning.ipynb
-│   └── ...
-│
-├── Partie_2_Deployment/
-│   ├── model_converted/
-│   ├── stm32_deployment_files/
-│   └── ...
-│
-└── README.md
-\```
 ---
 
 ## 🧩 Objectif global
