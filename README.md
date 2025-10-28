@@ -29,18 +29,20 @@ La seconde partie porte sur le **déploiement du modèle conçu** sur la cible *
 ---
 
 ## 📁 Structure du projet
+
+\```
 ├── Partie_1_Conception/
-│ ├── Pruning.pdf
-│ ├── notebook_pruning.ipynb
-│ └── ...
+│   ├── Pruning.pdf
+│   ├── notebook_pruning.ipynb
+│   └── ...
 │
 ├── Partie_2_Deployment/
-│ ├── model_converted/
-│ ├── stm32_deployment_files/
-│ └── ...
+│   ├── model_converted/
+│   ├── stm32_deployment_files/
+│   └── ...
 │
 └── README.md
-
+\```
 ---
 
 ## 🧩 Objectif global
