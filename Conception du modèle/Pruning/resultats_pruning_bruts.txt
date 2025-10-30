@@ -1,0 +1,2596 @@
+20 ------------------------------------------------------------------
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 285
+Paramètres avant: 282,826
+Paramètres après: 230,049
+Réduction RÉELLE: 18.7%
+Accuracy avant fine-tuning: 0.7946
+Fine-tuning...
+  Epoch 1: Val Acc = 0.8070
+  Epoch 2: Val Acc = 0.7975
+  Epoch 4: Val Acc = 0.8017
+Accuracy finale: 0.8281
+Rétention accuracy: 98.5%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 254
+Paramètres avant: 282,826
+Paramètres après: 188,452
+Réduction RÉELLE: 33.4%
+Accuracy avant fine-tuning: 0.7498
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7842
+  Epoch 2: Val Acc = 0.7945
+  Epoch 4: Val Acc = 0.8051
+Accuracy finale: 0.7945
+Rétention accuracy: 94.5%
+Ratio de compression: 1.5x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 221
+Paramètres avant: 282,826
+Paramètres après: 148,161
+Réduction RÉELLE: 47.6%
+Accuracy avant fine-tuning: 0.5521
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7772
+  Epoch 2: Val Acc = 0.7754
+  Epoch 4: Val Acc = 0.7871
+Accuracy finale: 0.7760
+Rétention accuracy: 92.3%
+Ratio de compression: 1.9x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 190
+Paramètres avant: 282,826
+Paramètres après: 116,036
+Réduction RÉELLE: 59.0%
+Accuracy avant fine-tuning: 0.3098
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7566
+  Epoch 2: Val Acc = 0.7710
+  Epoch 4: Val Acc = 0.7664
+Accuracy finale: 0.7784
+Rétention accuracy: 92.6%
+Ratio de compression: 2.4x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 160
+Paramètres avant: 282,826
+Paramètres après: 89,066
+Réduction RÉELLE: 68.5%
+Accuracy avant fine-tuning: 0.1804
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7176
+  Epoch 2: Val Acc = 0.7273
+  Epoch 4: Val Acc = 0.7524
+Accuracy finale: 0.7496
+Rétention accuracy: 89.2%
+Ratio de compression: 3.2x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 125
+Paramètres avant: 282,826
+Paramètres après: 63,169
+Réduction RÉELLE: 77.7%
+Accuracy avant fine-tuning: 0.1156
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6367
+  Epoch 2: Val Acc = 0.6878
+  Epoch 4: Val Acc = 0.7055
+Accuracy finale: 0.7089
+Rétention accuracy: 84.3%
+Ratio de compression: 4.5x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 94
+Paramètres avant: 282,826
+Paramètres après: 45,124
+Réduction RÉELLE: 84.0%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5465
+  Epoch 2: Val Acc = 0.6087
+  Epoch 4: Val Acc = 0.6416
+Accuracy finale: 0.6589
+Rétention accuracy: 78.4%
+Ratio de compression: 6.3x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 61
+Paramètres avant: 282,826
+Paramètres après: 30,689
+Réduction RÉELLE: 89.1%
+Accuracy avant fine-tuning: 0.1001
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4454
+  Epoch 2: Val Acc = 0.4818
+  Epoch 4: Val Acc = 0.5232
+Accuracy finale: 0.5505
+Rétention accuracy: 65.5%
+Ratio de compression: 9.2x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 30
+Paramètres avant: 282,826
+Paramètres après: 22,116
+Réduction RÉELLE: 92.2%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3478
+  Epoch 2: Val Acc = 0.3862
+  Epoch 4: Val Acc = 0.4256
+Accuracy finale: 0.4218
+Rétention accuracy: 50.2%
+Ratio de compression: 12.8x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 18.7% réduction, 98.5% accuracy, 1.2x compression
+Keep 80%: 33.4% réduction, 94.5% accuracy, 1.5x compression
+Keep 70%: 47.6% réduction, 92.3% accuracy, 1.9x compression
+Keep 60%: 59.0% réduction, 92.6% accuracy, 2.4x compression
+Keep 50%: 68.5% réduction, 89.2% accuracy, 3.2x compression
+Keep 40%: 77.7% réduction, 84.3% accuracy, 4.5x compression
+Keep 30%: 84.0% réduction, 78.4% accuracy, 6.3x compression
+Keep 20%: 89.1% réduction, 65.5% accuracy, 9.2x compression
+Keep 10%: 92.2% réduction, 50.2% accuracy, 12.8x compression
+[{'keep_ratio': 0.9,
+  'actual_reduction': 18.66058990333279,
+  'final_accuracy': 0.8281,
+  'accuracy_retention': 98.52468768590124,
+  'compression_ratio': 1.229416341735891,
+  'pruned_params': 230049},
+ {'keep_ratio': 0.8,
+  'actual_reduction': 33.36821932919887,
+  'final_accuracy': 0.7945,
+  'accuracy_retention': 94.52706722189173,
+  'compression_ratio': 1.5007853458705664,
+  'pruned_params': 188452},
+ {'keep_ratio': 0.7,
+  'actual_reduction': 47.61408074222314,
+  'final_accuracy': 0.776,
+  'accuracy_retention': 92.32599643069601,
+  'compression_ratio': 1.9089099020659959,
+  'pruned_params': 148161},
+ {'keep_ratio': 0.6,
+  'actual_reduction': 58.97265456499756,
+  'final_accuracy': 0.7784,
+  'accuracy_retention': 92.61154074955384,
+  'compression_ratio': 2.4373987383225897,
+  'pruned_params': 116036},
+ {'keep_ratio': 0.5,
+  'actual_reduction': 68.50855296189177,
+  'final_accuracy': 0.7496,
+  'accuracy_retention': 89.18500892325997,
+  'compression_ratio': 3.1754653852199493,
+  'pruned_params': 89066},
+ {'keep_ratio': 0.4,
+  'actual_reduction': 77.66506615374824,
+  'final_accuracy': 0.7089,
+  'accuracy_retention': 84.34265318262938,
+  'compression_ratio': 4.477291076319081,
+  'pruned_params': 63169},
+ {'keep_ratio': 0.3,
+  'actual_reduction': 84.04531408003507,
+  'final_accuracy': 0.6589,
+  'accuracy_retention': 78.39381320642474,
+  'compression_ratio': 6.2677510858966405,
+  'pruned_params': 45124},
+ {'keep_ratio': 0.2,
+  'actual_reduction': 89.14915884678211,
+  'final_accuracy': 0.5505,
+  'accuracy_retention': 65.49672813801308,
+  'compression_ratio': 9.215875395092704,
+  'pruned_params': 30689},
+ {'keep_ratio': 0.1,
+  'actual_reduction': 92.1803511699773,
+  'final_accuracy': 0.4218,
+  'accuracy_retention': 50.18441403926235,
+  'compression_ratio': 12.788298064749503,
+  'pruned_params': 22116}]
+
+ÉVALUATION DU MODÈLE ORIGINAL
+================================================================================
+Accuracy: 0.8405
+Paramètres: 282,826
+
+
+================================================================================
+MÉTHODE: L1 Magnitude
+================================================================================
+Calcul du ranking par magnitude L1...
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 226,851
+Réduction RÉELLE: 19.8%
+Accuracy avant fine-tuning: 0.0574
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7995
+  Epoch 2: Val Acc = 0.7986
+  Epoch 4: Val Acc = 0.8068
+Accuracy finale: 0.8177
+Rétention accuracy: 97.3%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 182,394
+Réduction RÉELLE: 35.5%
+Accuracy avant fine-tuning: 0.1277
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7927
+  Epoch 2: Val Acc = 0.7923
+  Epoch 4: Val Acc = 0.8086
+Accuracy finale: 0.8076
+Rétention accuracy: 96.1%
+Ratio de compression: 1.6x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 139,581
+Réduction RÉELLE: 50.6%
+Accuracy avant fine-tuning: 0.1387
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7658
+  Epoch 2: Val Acc = 0.7815
+  Epoch 4: Val Acc = 0.7980
+Accuracy finale: 0.7991
+Rétention accuracy: 95.1%
+Ratio de compression: 2.0x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 105,272
+Réduction RÉELLE: 62.8%
+Accuracy avant fine-tuning: 0.1519
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7264
+  Epoch 2: Val Acc = 0.7489
+  Epoch 4: Val Acc = 0.7683
+Accuracy finale: 0.7749
+Rétention accuracy: 92.2%
+Ratio de compression: 2.7x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 76,586
+Réduction RÉELLE: 72.9%
+Accuracy avant fine-tuning: 0.0998
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7042
+  Epoch 2: Val Acc = 0.7365
+  Epoch 4: Val Acc = 0.7574
+Accuracy finale: 0.7564
+Rétention accuracy: 90.0%
+Ratio de compression: 3.7x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 49,155
+Réduction RÉELLE: 82.6%
+Accuracy avant fine-tuning: 0.1010
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5991
+  Epoch 2: Val Acc = 0.6426
+  Epoch 4: Val Acc = 0.6856
+Accuracy finale: 0.7055
+Rétention accuracy: 83.9%
+Ratio de compression: 5.8x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 29,914
+Réduction RÉELLE: 89.4%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4850
+  Epoch 2: Val Acc = 0.5380
+  Epoch 4: Val Acc = 0.5498
+Accuracy finale: 0.5887
+Rétention accuracy: 70.0%
+Ratio de compression: 9.5x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 14,621
+Réduction RÉELLE: 94.8%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4272
+  Epoch 2: Val Acc = 0.4576
+  Epoch 4: Val Acc = 0.5162
+Accuracy finale: 0.5135
+Rétention accuracy: 61.1%
+Ratio de compression: 19.3x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 5,528
+Réduction RÉELLE: 98.0%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.2996
+  Epoch 2: Val Acc = 0.3396
+  Epoch 4: Val Acc = 0.3766
+Accuracy finale: 0.3969
+Rétention accuracy: 47.2%
+Ratio de compression: 51.2x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 19.8% réduction, 97.3% accuracy, 1.2x compression
+Keep 80%: 35.5% réduction, 96.1% accuracy, 1.6x compression
+Keep 70%: 50.6% réduction, 95.1% accuracy, 2.0x compression
+Keep 60%: 62.8% réduction, 92.2% accuracy, 2.7x compression
+Keep 50%: 72.9% réduction, 90.0% accuracy, 3.7x compression
+Keep 40%: 82.6% réduction, 83.9% accuracy, 5.8x compression
+Keep 30%: 89.4% réduction, 70.0% accuracy, 9.5x compression
+Keep 20%: 94.8% réduction, 61.1% accuracy, 19.3x compression
+Keep 10%: 98.0% réduction, 47.2% accuracy, 51.2x compression
+
+================================================================================
+MÉTHODE: L2 Magnitude
+================================================================================
+Calcul du ranking par magnitude L2...
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 226,851
+Réduction RÉELLE: 19.8%
+Accuracy avant fine-tuning: 0.0676
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7953
+  Epoch 2: Val Acc = 0.8108
+  Epoch 4: Val Acc = 0.8160
+Accuracy finale: 0.8148
+Rétention accuracy: 96.9%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 182,394
+Réduction RÉELLE: 35.5%
+Accuracy avant fine-tuning: 0.1010
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7904
+  Epoch 2: Val Acc = 0.7914
+  Epoch 4: Val Acc = 0.8100
+Accuracy finale: 0.7986
+Rétention accuracy: 95.0%
+Ratio de compression: 1.6x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 139,581
+Réduction RÉELLE: 50.6%
+Accuracy avant fine-tuning: 0.0543
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7735
+  Epoch 2: Val Acc = 0.7705
+  Epoch 4: Val Acc = 0.7918
+Accuracy finale: 0.7882
+Rétention accuracy: 93.8%
+Ratio de compression: 2.0x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 105,272
+Réduction RÉELLE: 62.8%
+Accuracy avant fine-tuning: 0.1144
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7473
+  Epoch 2: Val Acc = 0.7660
+  Epoch 4: Val Acc = 0.7655
+Accuracy finale: 0.7732
+Rétention accuracy: 92.0%
+Ratio de compression: 2.7x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 76,586
+Réduction RÉELLE: 72.9%
+Accuracy avant fine-tuning: 0.0996
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6807
+  Epoch 2: Val Acc = 0.7232
+  Epoch 4: Val Acc = 0.7292
+Accuracy finale: 0.7406
+Rétention accuracy: 88.1%
+Ratio de compression: 3.7x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 49,155
+Réduction RÉELLE: 82.6%
+Accuracy avant fine-tuning: 0.0954
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6055
+  Epoch 2: Val Acc = 0.6388
+  Epoch 4: Val Acc = 0.6794
+Accuracy finale: 0.7077
+Rétention accuracy: 84.2%
+Ratio de compression: 5.8x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 29,914
+Réduction RÉELLE: 89.4%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5171
+  Epoch 2: Val Acc = 0.5537
+  Epoch 4: Val Acc = 0.6005
+Accuracy finale: 0.6205
+Rétention accuracy: 73.8%
+Ratio de compression: 9.5x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 14,621
+Réduction RÉELLE: 94.8%
+Accuracy avant fine-tuning: 0.0911
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3939
+  Epoch 2: Val Acc = 0.4653
+  Epoch 4: Val Acc = 0.4908
+Accuracy finale: 0.5245
+Rétention accuracy: 62.4%
+Ratio de compression: 19.3x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6
+Paramètres avant: 282,826
+Paramètres après: 5,528
+Réduction RÉELLE: 98.0%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3190
+  Epoch 2: Val Acc = 0.3534
+  Epoch 4: Val Acc = 0.4005
+Accuracy finale: 0.4034
+Rétention accuracy: 48.0%
+Ratio de compression: 51.2x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 19.8% réduction, 96.9% accuracy, 1.2x compression
+Keep 80%: 35.5% réduction, 95.0% accuracy, 1.6x compression
+Keep 70%: 50.6% réduction, 93.8% accuracy, 2.0x compression
+Keep 60%: 62.8% réduction, 92.0% accuracy, 2.7x compression
+Keep 50%: 72.9% réduction, 88.1% accuracy, 3.7x compression
+Keep 40%: 82.6% réduction, 84.2% accuracy, 5.8x compression
+Keep 30%: 89.4% réduction, 73.8% accuracy, 9.5x compression
+Keep 20%: 94.8% réduction, 62.4% accuracy, 19.3x compression
+Keep 10%: 98.0% réduction, 48.0% accuracy, 51.2x compression
+
+
+
+
+40 ---------
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 285
+Paramètres avant: 282,826
+Paramètres après: 230,049
+Réduction RÉELLE: 18.7%
+Accuracy avant fine-tuning: 0.7905
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7977
+  Epoch 2: Val Acc = 0.8151
+  Epoch 4: Val Acc = 0.8138
+Accuracy finale: 0.8052
+Rétention accuracy: 95.8%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 254
+Paramètres avant: 282,826
+Paramètres après: 188,452
+Réduction RÉELLE: 33.4%
+Accuracy avant fine-tuning: 0.6995
+Fine-tuning...
+  Epoch 1: Val Acc = 0.8004
+  Epoch 2: Val Acc = 0.8023
+  Epoch 4: Val Acc = 0.7998
+Accuracy finale: 0.7993
+Rétention accuracy: 95.1%
+Ratio de compression: 1.5x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 221
+Paramètres avant: 282,826
+Paramètres après: 148,161
+Réduction RÉELLE: 47.6%
+Accuracy avant fine-tuning: 0.5545
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7803
+  Epoch 2: Val Acc = 0.7874
+  Epoch 4: Val Acc = 0.7921
+Accuracy finale: 0.7861
+Rétention accuracy: 93.5%
+Ratio de compression: 1.9x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 190
+Paramètres avant: 282,826
+Paramètres après: 116,036
+Réduction RÉELLE: 59.0%
+Accuracy avant fine-tuning: 0.3116
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7603
+  Epoch 2: Val Acc = 0.7623
+  Epoch 4: Val Acc = 0.7671
+Accuracy finale: 0.7796
+Rétention accuracy: 92.8%
+Ratio de compression: 2.4x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 160
+Paramètres avant: 282,826
+Paramètres après: 89,066
+Réduction RÉELLE: 68.5%
+Accuracy avant fine-tuning: 0.1636
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7245
+  Epoch 2: Val Acc = 0.7338
+  Epoch 4: Val Acc = 0.7560
+Accuracy finale: 0.7650
+Rétention accuracy: 91.0%
+Ratio de compression: 3.2x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 125
+Paramètres avant: 282,826
+Paramètres après: 63,169
+Réduction RÉELLE: 77.7%
+Accuracy avant fine-tuning: 0.1284
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6387
+  Epoch 2: Val Acc = 0.6660
+  Epoch 4: Val Acc = 0.6952
+Accuracy finale: 0.7264
+Rétention accuracy: 86.4%
+Ratio de compression: 4.5x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 94
+Paramètres avant: 282,826
+Paramètres après: 45,124
+Réduction RÉELLE: 84.0%
+Accuracy avant fine-tuning: 0.1099
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5336
+  Epoch 2: Val Acc = 0.5830
+  Epoch 4: Val Acc = 0.6389
+Accuracy finale: 0.6398
+Rétention accuracy: 76.1%
+Ratio de compression: 6.3x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 61
+Paramètres avant: 282,826
+Paramètres après: 30,689
+Réduction RÉELLE: 89.1%
+Accuracy avant fine-tuning: 0.1157
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4685
+  Epoch 2: Val Acc = 0.4867
+  Epoch 4: Val Acc = 0.5245
+Accuracy finale: 0.5402
+Rétention accuracy: 64.3%
+Ratio de compression: 9.2x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 30
+Paramètres avant: 282,826
+Paramètres après: 22,116
+Réduction RÉELLE: 92.2%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3713
+  Epoch 2: Val Acc = 0.3993
+  Epoch 4: Val Acc = 0.4199
+Accuracy finale: 0.4383
+Rétention accuracy: 52.1%
+Ratio de compression: 12.8x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 18.7% réduction, 95.8% accuracy, 1.2x compression
+Keep 80%: 33.4% réduction, 95.1% accuracy, 1.5x compression
+Keep 70%: 47.6% réduction, 93.5% accuracy, 1.9x compression
+Keep 60%: 59.0% réduction, 92.8% accuracy, 2.4x compression
+Keep 50%: 68.5% réduction, 91.0% accuracy, 3.2x compression
+Keep 40%: 77.7% réduction, 86.4% accuracy, 4.5x compression
+Keep 30%: 84.0% réduction, 76.1% accuracy, 6.3x compression
+Keep 20%: 89.1% réduction, 64.3% accuracy, 9.2x compression
+Keep 10%: 92.2% réduction, 52.1% accuracy, 12.8x compression
+[{'keep_ratio': 0.9,
+  'actual_reduction': 18.66058990333279,
+  'final_accuracy': 0.8052,
+  'accuracy_retention': 95.80011897679952,
+  'compression_ratio': 1.229416341735891,
+  'pruned_params': 230049},
+ {'keep_ratio': 0.8,
+  'actual_reduction': 33.36821932919887,
+  'final_accuracy': 0.7993,
+  'accuracy_retention': 95.09815585960737,
+  'compression_ratio': 1.5007853458705664,
+  'pruned_params': 188452},
+ {'keep_ratio': 0.7,
+  'actual_reduction': 47.61408074222314,
+  'final_accuracy': 0.7861,
+  'accuracy_retention': 93.52766210588935,
+  'compression_ratio': 1.9089099020659959,
+  'pruned_params': 148161},
+ {'keep_ratio': 0.6,
+  'actual_reduction': 58.97265456499756,
+  'final_accuracy': 0.7796,
+  'accuracy_retention': 92.75431290898274,
+  'compression_ratio': 2.4373987383225897,
+  'pruned_params': 116036},
+ {'keep_ratio': 0.5,
+  'actual_reduction': 68.50855296189177,
+  'final_accuracy': 0.765,
+  'accuracy_retention': 91.01725163593099,
+  'compression_ratio': 3.1754653852199493,
+  'pruned_params': 89066},
+ {'keep_ratio': 0.4,
+  'actual_reduction': 77.66506615374824,
+  'final_accuracy': 0.7264,
+  'accuracy_retention': 86.424747174301,
+  'compression_ratio': 4.477291076319081,
+  'pruned_params': 63169},
+ {'keep_ratio': 0.3,
+  'actual_reduction': 84.04531408003507,
+  'final_accuracy': 0.6398,
+  'accuracy_retention': 76.12135633551458,
+  'compression_ratio': 6.2677510858966405,
+  'pruned_params': 45124},
+ {'keep_ratio': 0.2,
+  'actual_reduction': 89.14915884678211,
+  'final_accuracy': 0.5402,
+  'accuracy_retention': 64.27126710291493,
+  'compression_ratio': 9.215875395092704,
+  'pruned_params': 30689},
+ {'keep_ratio': 0.1,
+  'actual_reduction': 92.1803511699773,
+  'final_accuracy': 0.4383,
+  'accuracy_retention': 52.14753123140987,
+  'compression_ratio': 12.788298064749503,
+  'pruned_params': 22116}]
+
+------60 
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 285
+Paramètres avant: 282,826
+Paramètres après: 230,049
+Réduction RÉELLE: 18.7%
+Accuracy avant fine-tuning: 0.7992
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7998
+  Epoch 2: Val Acc = 0.7993
+  Epoch 4: Val Acc = 0.8067
+Accuracy finale: 0.8165
+Rétention accuracy: 97.1%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 254
+Paramètres avant: 282,826
+Paramètres après: 188,452
+Réduction RÉELLE: 33.4%
+Accuracy avant fine-tuning: 0.7350
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7999
+  Epoch 2: Val Acc = 0.7999
+  Epoch 4: Val Acc = 0.7923
+Accuracy finale: 0.7947
+Rétention accuracy: 94.6%
+Ratio de compression: 1.5x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 221
+Paramètres avant: 282,826
+Paramètres après: 148,161
+Réduction RÉELLE: 47.6%
+Accuracy avant fine-tuning: 0.5590
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7676
+  Epoch 2: Val Acc = 0.7723
+  Epoch 4: Val Acc = 0.7938
+Accuracy finale: 0.7919
+Rétention accuracy: 94.2%
+Ratio de compression: 1.9x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 190
+Paramètres avant: 282,826
+Paramètres après: 116,036
+Réduction RÉELLE: 59.0%
+Accuracy avant fine-tuning: 0.3238
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7586
+  Epoch 2: Val Acc = 0.7675
+  Epoch 4: Val Acc = 0.7706
+Accuracy finale: 0.7880
+Rétention accuracy: 93.8%
+Ratio de compression: 2.4x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 160
+Paramètres avant: 282,826
+Paramètres après: 89,066
+Réduction RÉELLE: 68.5%
+Accuracy avant fine-tuning: 0.1443
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7215
+  Epoch 2: Val Acc = 0.7382
+  Epoch 4: Val Acc = 0.7430
+Accuracy finale: 0.7507
+Rétention accuracy: 89.3%
+Ratio de compression: 3.2x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 125
+Paramètres avant: 282,826
+Paramètres après: 63,169
+Réduction RÉELLE: 77.7%
+Accuracy avant fine-tuning: 0.1034
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6434
+  Epoch 2: Val Acc = 0.6938
+  Epoch 4: Val Acc = 0.7103
+Accuracy finale: 0.7188
+Rétention accuracy: 85.5%
+Ratio de compression: 4.5x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 94
+Paramètres avant: 282,826
+Paramètres après: 45,124
+Réduction RÉELLE: 84.0%
+Accuracy avant fine-tuning: 0.1080
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5472
+  Epoch 2: Val Acc = 0.5813
+  Epoch 4: Val Acc = 0.6346
+Accuracy finale: 0.6362
+Rétention accuracy: 75.7%
+Ratio de compression: 6.3x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 61
+Paramètres avant: 282,826
+Paramètres après: 30,689
+Réduction RÉELLE: 89.1%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4486
+  Epoch 2: Val Acc = 0.4976
+  Epoch 4: Val Acc = 0.5436
+Accuracy finale: 0.5612
+Rétention accuracy: 66.8%
+Ratio de compression: 9.2x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 30
+Paramètres avant: 282,826
+Paramètres après: 22,116
+Réduction RÉELLE: 92.2%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3532
+  Epoch 2: Val Acc = 0.4102
+  Epoch 4: Val Acc = 0.4509
+Accuracy finale: 0.4409
+Rétention accuracy: 52.5%
+Ratio de compression: 12.8x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 18.7% réduction, 97.1% accuracy, 1.2x compression
+Keep 80%: 33.4% réduction, 94.6% accuracy, 1.5x compression
+Keep 70%: 47.6% réduction, 94.2% accuracy, 1.9x compression
+Keep 60%: 59.0% réduction, 93.8% accuracy, 2.4x compression
+Keep 50%: 68.5% réduction, 89.3% accuracy, 3.2x compression
+Keep 40%: 77.7% réduction, 85.5% accuracy, 4.5x compression
+Keep 30%: 84.0% réduction, 75.7% accuracy, 6.3x compression
+Keep 20%: 89.1% réduction, 66.8% accuracy, 9.2x compression
+Keep 10%: 92.2% réduction, 52.5% accuracy, 12.8x compression
+[{'keep_ratio': 0.9,
+  'actual_reduction': 18.66058990333279,
+  'final_accuracy': 0.8165,
+  'accuracy_retention': 97.14455681142177,
+  'compression_ratio': 1.229416341735891,
+  'pruned_params': 230049},
+ {'keep_ratio': 0.8,
+  'actual_reduction': 33.36821932919887,
+  'final_accuracy': 0.7947,
+  'accuracy_retention': 94.55086258179655,
+  'compression_ratio': 1.5007853458705664,
+  'pruned_params': 188452},
+ {'keep_ratio': 0.7,
+  'actual_reduction': 47.61408074222314,
+  'final_accuracy': 0.7919,
+  'accuracy_retention': 94.21772754312909,
+  'compression_ratio': 1.9089099020659959,
+  'pruned_params': 148161},
+ {'keep_ratio': 0.6,
+  'actual_reduction': 58.97265456499756,
+  'final_accuracy': 0.788,
+  'accuracy_retention': 93.75371802498513,
+  'compression_ratio': 2.4373987383225897,
+  'pruned_params': 116036},
+ {'keep_ratio': 0.5,
+  'actual_reduction': 68.50855296189177,
+  'final_accuracy': 0.7507,
+  'accuracy_retention': 89.31588340273646,
+  'compression_ratio': 3.1754653852199493,
+  'pruned_params': 89066},
+ {'keep_ratio': 0.4,
+  'actual_reduction': 77.66506615374824,
+  'final_accuracy': 0.7188,
+  'accuracy_retention': 85.5205234979179,
+  'compression_ratio': 4.477291076319081,
+  'pruned_params': 63169},
+ {'keep_ratio': 0.3,
+  'actual_reduction': 84.04531408003507,
+  'final_accuracy': 0.6362,
+  'accuracy_retention': 75.69303985722784,
+  'compression_ratio': 6.2677510858966405,
+  'pruned_params': 45124},
+ {'keep_ratio': 0.2,
+  'actual_reduction': 89.14915884678211,
+  'final_accuracy': 0.5612,
+  'accuracy_retention': 66.76977989292088,
+  'compression_ratio': 9.215875395092704,
+  'pruned_params': 30689},
+ {'keep_ratio': 0.1,
+  'actual_reduction': 92.1803511699773,
+  'final_accuracy': 0.4409,
+  'accuracy_retention': 52.45687091017251,
+  'compression_ratio': 12.788298064749503,
+  'pruned_params': 22116}]
+
+
+
+----- Variance Aleatoire : 
+================================================================================
+ÉVALUATION DU MODÈLE ORIGINAL
+================================================================================
+Accuracy: 0.8405
+Paramètres: 282,826
+
+
+================================================================================
+MÉTHODE: Variance
+================================================================================
+Calcul du ranking par variance...
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 28532
+Paramètres avant: 282,826
+Paramètres après: 226,851
+Réduction RÉELLE: 19.8%
+Accuracy avant fine-tuning: 0.1403
+Fine-tuning...
+  Epoch 1: Val Acc = 0.8000
+  Epoch 2: Val Acc = 0.8084
+  Epoch 4: Val Acc = 0.8150
+Accuracy finale: 0.8119
+Rétention accuracy: 96.6%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 25355
+Paramètres avant: 282,826
+Paramètres après: 182,394
+Réduction RÉELLE: 35.5%
+Accuracy avant fine-tuning: 0.0913
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7874
+  Epoch 2: Val Acc = 0.7984
+  Epoch 4: Val Acc = 0.7956
+Accuracy finale: 0.8038
+Rétention accuracy: 95.6%
+Ratio de compression: 1.6x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 22082
+Paramètres avant: 282,826
+Paramètres après: 139,581
+Réduction RÉELLE: 50.6%
+Accuracy avant fine-tuning: 0.1082
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7666
+  Epoch 2: Val Acc = 0.7799
+  Epoch 4: Val Acc = 0.7834
+Accuracy finale: 0.7899
+Rétention accuracy: 94.0%
+Ratio de compression: 2.0x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 18905
+Paramètres avant: 282,826
+Paramètres après: 105,272
+Réduction RÉELLE: 62.8%
+Accuracy avant fine-tuning: 0.0424
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7499
+  Epoch 2: Val Acc = 0.7667
+  Epoch 4: Val Acc = 0.7678
+Accuracy finale: 0.7818
+Rétention accuracy: 93.0%
+Ratio de compression: 2.7x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 15920
+Paramètres avant: 282,826
+Paramètres après: 76,586
+Réduction RÉELLE: 72.9%
+Accuracy avant fine-tuning: 0.1124
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7039
+  Epoch 2: Val Acc = 0.7292
+  Epoch 4: Val Acc = 0.7336
+Accuracy finale: 0.7545
+Rétention accuracy: 89.8%
+Ratio de compression: 3.7x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 12612
+Paramètres avant: 282,826
+Paramètres après: 49,155
+Réduction RÉELLE: 82.6%
+Accuracy avant fine-tuning: 0.0820
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6043
+  Epoch 2: Val Acc = 0.6618
+  Epoch 4: Val Acc = 0.6837
+Accuracy finale: 0.6928
+Rétention accuracy: 82.4%
+Ratio de compression: 5.8x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 12612
+Paramètres avant: 282,826
+Paramètres après: 49,155
+Réduction RÉELLE: 82.6%
+Accuracy avant fine-tuning: 0.1363
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5880
+  Epoch 2: Val Acc = 0.6562
+  Epoch 4: Val Acc = 0.6876
+Accuracy finale: 0.6985
+Rétention accuracy: 83.1%
+Ratio de compression: 5.8x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 9435
+Paramètres avant: 282,826
+Paramètres après: 29,914
+Réduction RÉELLE: 89.4%
+Accuracy avant fine-tuning: 0.0993
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5104
+  Epoch 2: Val Acc = 0.5632
+  Epoch 4: Val Acc = 0.5872
+Accuracy finale: 0.5985
+Rétention accuracy: 71.2%
+Ratio de compression: 9.5x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6162
+Paramètres avant: 282,826
+Paramètres après: 14,621
+Réduction RÉELLE: 94.8%
+Accuracy avant fine-tuning: 0.1015
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4205
+  Epoch 2: Val Acc = 0.4704
+  Epoch 4: Val Acc = 0.5229
+Accuracy finale: 0.5273
+Rétention accuracy: 62.7%
+Ratio de compression: 19.3x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 2985
+Paramètres avant: 282,826
+Paramètres après: 5,528
+Réduction RÉELLE: 98.0%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.2870
+  Epoch 2: Val Acc = 0.3306
+  Epoch 4: Val Acc = 0.3670
+Accuracy finale: 0.3719
+Rétention accuracy: 44.2%
+Ratio de compression: 51.2x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 19.8% réduction, 96.6% accuracy, 1.2x compression
+Keep 80%: 35.5% réduction, 95.6% accuracy, 1.6x compression
+Keep 70%: 50.6% réduction, 94.0% accuracy, 2.0x compression
+Keep 60%: 62.8% réduction, 93.0% accuracy, 2.7x compression
+Keep 50%: 72.9% réduction, 89.8% accuracy, 3.7x compression
+Keep 40%: 82.6% réduction, 82.4% accuracy, 5.8x compression
+Keep 40%: 82.6% réduction, 83.1% accuracy, 5.8x compression
+Keep 30%: 89.4% réduction, 71.2% accuracy, 9.5x compression
+Keep 20%: 94.8% réduction, 62.7% accuracy, 19.3x compression
+Keep 10%: 98.0% réduction, 44.2% accuracy, 51.2x compression
+
+================================================================================
+MÉTHODE: Random
+================================================================================
+Calcul du ranking aléatoire...
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 28532
+Paramètres avant: 282,826
+Paramètres après: 226,851
+Réduction RÉELLE: 19.8%
+Accuracy avant fine-tuning: 0.0892
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7846
+  Epoch 2: Val Acc = 0.7978
+  Epoch 4: Val Acc = 0.8092
+Accuracy finale: 0.8140
+Rétention accuracy: 96.8%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 25355
+Paramètres avant: 282,826
+Paramètres après: 182,394
+Réduction RÉELLE: 35.5%
+Accuracy avant fine-tuning: 0.1558
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7859
+  Epoch 2: Val Acc = 0.7955
+  Epoch 4: Val Acc = 0.7938
+Accuracy finale: 0.8047
+Rétention accuracy: 95.7%
+Ratio de compression: 1.6x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 22082
+Paramètres avant: 282,826
+Paramètres après: 139,581
+Réduction RÉELLE: 50.6%
+Accuracy avant fine-tuning: 0.0737
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7516
+  Epoch 2: Val Acc = 0.7758
+  Epoch 4: Val Acc = 0.7831
+Accuracy finale: 0.7989
+Rétention accuracy: 95.1%
+Ratio de compression: 2.0x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 18905
+Paramètres avant: 282,826
+Paramètres après: 105,272
+Réduction RÉELLE: 62.8%
+Accuracy avant fine-tuning: 0.1198
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7232
+  Epoch 2: Val Acc = 0.7397
+  Epoch 4: Val Acc = 0.7640
+Accuracy finale: 0.7718
+Rétention accuracy: 91.8%
+Ratio de compression: 2.7x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 15920
+Paramètres avant: 282,826
+Paramètres après: 76,586
+Réduction RÉELLE: 72.9%
+Accuracy avant fine-tuning: 0.1264
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6687
+  Epoch 2: Val Acc = 0.7038
+  Epoch 4: Val Acc = 0.7289
+Accuracy finale: 0.7483
+Rétention accuracy: 89.0%
+Ratio de compression: 3.7x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 12612
+Paramètres avant: 282,826
+Paramètres après: 49,155
+Réduction RÉELLE: 82.6%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6002
+  Epoch 2: Val Acc = 0.6381
+  Epoch 4: Val Acc = 0.6942
+Accuracy finale: 0.6909
+Rétention accuracy: 82.2%
+Ratio de compression: 5.8x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 12612
+Paramètres avant: 282,826
+Paramètres après: 49,155
+Réduction RÉELLE: 82.6%
+Accuracy avant fine-tuning: 0.1051
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6038
+  Epoch 2: Val Acc = 0.6458
+  Epoch 4: Val Acc = 0.6847
+Accuracy finale: 0.6980
+Rétention accuracy: 83.0%
+Ratio de compression: 5.8x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 9435
+Paramètres avant: 282,826
+Paramètres après: 29,914
+Réduction RÉELLE: 89.4%
+Accuracy avant fine-tuning: 0.0926
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4962
+  Epoch 2: Val Acc = 0.5481
+  Epoch 4: Val Acc = 0.5924
+Accuracy finale: 0.5966
+Rétention accuracy: 71.0%
+Ratio de compression: 9.5x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 6162
+Paramètres avant: 282,826
+Paramètres après: 14,621
+Réduction RÉELLE: 94.8%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3964
+  Epoch 2: Val Acc = 0.4533
+  Epoch 4: Val Acc = 0.4976
+Accuracy finale: 0.5207
+Rétention accuracy: 62.0%
+Ratio de compression: 19.3x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 2985
+Paramètres avant: 282,826
+Paramètres après: 5,528
+Réduction RÉELLE: 98.0%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3065
+  Epoch 2: Val Acc = 0.3518
+  Epoch 4: Val Acc = 0.3983
+Accuracy finale: 0.4061
+Rétention accuracy: 48.3%
+Ratio de compression: 51.2x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 19.8% réduction, 96.8% accuracy, 1.2x compression
+Keep 80%: 35.5% réduction, 95.7% accuracy, 1.6x compression
+Keep 70%: 50.6% réduction, 95.1% accuracy, 2.0x compression
+Keep 60%: 62.8% réduction, 91.8% accuracy, 2.7x compression
+Keep 50%: 72.9% réduction, 89.0% accuracy, 3.7x compression
+Keep 40%: 82.6% réduction, 82.2% accuracy, 5.8x compression
+Keep 40%: 82.6% réduction, 83.0% accuracy, 5.8x compression
+Keep 30%: 89.4% réduction, 71.0% accuracy, 9.5x compression
+Keep 20%: 94.8% réduction, 62.0% accuracy, 19.3x compression
+Keep 10%: 98.0% réduction, 48.3% accuracy, 51.2x compression
+
+================================================================================
+TABLEAU COMPARATIF - RETENTION D'ACCURACY (%)
+================================================================================
+Méthode                      Keep 90%    Keep 80%    Keep 70%    Keep 60%    Keep 50%    Keep 40%    Keep 40%    Keep 30%    Keep 20%    Keep 10%
+--------------------------------------------------------------------------------
+Variance                        96.6%       95.6%       94.0%       93.0%       89.8%       82.4%       82.4%       71.2%       62.7%       44.2%
+Random                          96.8%       95.7%       95.1%       91.8%       89.0%       82.2%       82.2%       71.0%       62.0%       48.3%
+
+================================================================================
+ANALYSE PAR RATIO DE COMPRESSION
+================================================================================
+
+--- Keep 90% des filtres ---
+🥇 Random                   :  96.8% (compression 1.2x)
+🥈 Variance                 :  96.6% (compression 1.2x)
+
+--- Keep 80% des filtres ---
+🥇 Random                   :  95.7% (compression 1.6x)
+🥈 Variance                 :  95.6% (compression 1.6x)
+
+--- Keep 70% des filtres ---
+🥇 Random                   :  95.1% (compression 2.0x)
+🥈 Variance                 :  94.0% (compression 2.0x)
+
+--- Keep 60% des filtres ---
+🥇 Variance                 :  93.0% (compression 2.7x)
+🥈 Random                   :  91.8% (compression 2.7x)
+
+--- Keep 50% des filtres ---
+🥇 Variance                 :  89.8% (compression 3.7x)
+🥈 Random                   :  89.0% (compression 3.7x)
+
+--- Keep 40% des filtres ---
+🥇 Variance                 :  82.4% (compression 5.8x)
+🥈 Random                   :  82.2% (compression 5.8x)
+
+--- Keep 40% des filtres ---
+🥇 Variance                 :  82.4% (compression 5.8x)
+🥈 Random                   :  82.2% (compression 5.8x)
+
+--- Keep 30% des filtres ---
+🥇 Variance                 :  71.2% (compression 9.5x)
+🥈 Random                   :  71.0% (compression 9.5x)
+
+--- Keep 20% des filtres ---
+🥇 Variance                 :  62.7% (compression 19.3x)
+🥈 Random                   :  62.0% (compression 19.3x)
+
+--- Keep 10% des filtres ---
+🥇 Random                   :  48.3% (compression 51.2x)
+🥈 Variance                 :  44.2% (compression 51.2x)
+
+================================================================================
+STATISTIQUES GLOBALES
+================================================================================
+
+Variance:
+  Moyenne: 81.3%
+  Min: 44.2%
+  Max: 96.6%
+  Écart-type: 16.2%
+
+Random:
+  Moyenne: 81.5%
+  Min: 48.3%
+  Max: 96.8%
+  Écart-type: 15.4%
+
+
+
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 285
+Paramètres avant: 282,826
+Paramètres après: 230,049
+Réduction RÉELLE: 18.7%
+Accuracy avant fine-tuning: 0.8142
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7983
+  Epoch 2: Val Acc = 0.8113
+  Epoch 4: Val Acc = 0.8248
+Accuracy finale: 0.8075
+Rétention accuracy: 96.1%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 254
+Paramètres avant: 282,826
+Paramètres après: 188,452
+Réduction RÉELLE: 33.4%
+Accuracy avant fine-tuning: 0.7533
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7908
+  Epoch 2: Val Acc = 0.8021
+  Epoch 4: Val Acc = 0.8062
+Accuracy finale: 0.8100
+Rétention accuracy: 96.4%
+Ratio de compression: 1.5x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 221
+Paramètres avant: 282,826
+Paramètres après: 148,161
+Réduction RÉELLE: 47.6%
+Accuracy avant fine-tuning: 0.6339
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7758
+  Epoch 2: Val Acc = 0.7753
+  Epoch 4: Val Acc = 0.7960
+Accuracy finale: 0.7951
+Rétention accuracy: 94.6%
+Ratio de compression: 1.9x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 190
+Paramètres avant: 282,826
+Paramètres après: 116,036
+Réduction RÉELLE: 59.0%
+Accuracy avant fine-tuning: 0.3158
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7644
+  Epoch 2: Val Acc = 0.7748
+  Epoch 4: Val Acc = 0.7617
+Accuracy finale: 0.7732
+Rétention accuracy: 92.0%
+Ratio de compression: 2.4x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 160
+Paramètres avant: 282,826
+Paramètres après: 89,066
+Réduction RÉELLE: 68.5%
+Accuracy avant fine-tuning: 0.1617
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7287
+  Epoch 2: Val Acc = 0.7339
+  Epoch 4: Val Acc = 0.7508
+Accuracy finale: 0.7561
+Rétention accuracy: 90.0%
+Ratio de compression: 3.2x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 125
+Paramètres avant: 282,826
+Paramètres après: 63,169
+Réduction RÉELLE: 77.7%
+Accuracy avant fine-tuning: 0.1045
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6470
+  Epoch 2: Val Acc = 0.6980
+  Epoch 4: Val Acc = 0.7222
+Accuracy finale: 0.7249
+Rétention accuracy: 86.2%
+Ratio de compression: 4.5x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 94
+Paramètres avant: 282,826
+Paramètres après: 45,124
+Réduction RÉELLE: 84.0%
+Accuracy avant fine-tuning: 0.1269
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5609
+  Epoch 2: Val Acc = 0.5785
+  Epoch 4: Val Acc = 0.6264
+Accuracy finale: 0.6489
+Rétention accuracy: 77.2%
+Ratio de compression: 6.3x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 61
+Paramètres avant: 282,826
+Paramètres après: 30,689
+Réduction RÉELLE: 89.1%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4413
+  Epoch 2: Val Acc = 0.4832
+  Epoch 4: Val Acc = 0.5431
+Accuracy finale: 0.5536
+Rétention accuracy: 65.9%
+Ratio de compression: 9.2x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 30
+Paramètres avant: 282,826
+Paramètres après: 22,116
+Réduction RÉELLE: 92.2%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3715
+  Epoch 2: Val Acc = 0.4040
+  Epoch 4: Val Acc = 0.4115
+Accuracy finale: 0.4451
+Rétention accuracy: 53.0%
+Ratio de compression: 12.8x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 18.7% réduction, 96.1% accuracy, 1.2x compression
+Keep 80%: 33.4% réduction, 96.4% accuracy, 1.5x compression
+Keep 70%: 47.6% réduction, 94.6% accuracy, 1.9x compression
+Keep 60%: 59.0% réduction, 92.0% accuracy, 2.4x compression
+Keep 50%: 68.5% réduction, 90.0% accuracy, 3.2x compression
+Keep 40%: 77.7% réduction, 86.2% accuracy, 4.5x compression
+Keep 30%: 84.0% réduction, 77.2% accuracy, 6.3x compression
+Keep 20%: 89.1% réduction, 65.9% accuracy, 9.2x compression
+Keep 10%: 92.2% réduction, 53.0% accuracy, 12.8x compression
+[{'keep_ratio': 0.9,
+  'actual_reduction': 18.66058990333279,
+  'final_accuracy': 0.8075,
+  'accuracy_retention': 96.07376561570493,
+  'compression_ratio': 1.229416341735891,
+  'pruned_params': 230049},
+ {'keep_ratio': 0.8,
+  'actual_reduction': 33.36821932919887,
+  'final_accuracy': 0.81,
+  'accuracy_retention': 96.37120761451517,
+  'compression_ratio': 1.5007853458705664,
+  'pruned_params': 188452},
+ {'keep_ratio': 0.7,
+  'actual_reduction': 47.61408074222314,
+  'final_accuracy': 0.7951,
+  'accuracy_retention': 94.59845330160618,
+  'compression_ratio': 1.9089099020659959,
+  'pruned_params': 148161},
+ {'keep_ratio': 0.6,
+  'actual_reduction': 58.97265456499756,
+  'final_accuracy': 0.7732,
+  'accuracy_retention': 91.99286139202854,
+  'compression_ratio': 2.4373987383225897,
+  'pruned_params': 116036},
+ {'keep_ratio': 0.5,
+  'actual_reduction': 68.50855296189177,
+  'final_accuracy': 0.7561,
+  'accuracy_retention': 89.95835812016657,
+  'compression_ratio': 3.1754653852199493,
+  'pruned_params': 89066},
+ {'keep_ratio': 0.4,
+  'actual_reduction': 77.66506615374824,
+  'final_accuracy': 0.7249,
+  'accuracy_retention': 86.24628197501487,
+  'compression_ratio': 4.477291076319081,
+  'pruned_params': 63169},
+ {'keep_ratio': 0.3,
+  'actual_reduction': 84.04531408003507,
+  'final_accuracy': 0.6489,
+  'accuracy_retention': 77.20404521118382,
+  'compression_ratio': 6.2677510858966405,
+  'pruned_params': 45124},
+ {'keep_ratio': 0.2,
+  'actual_reduction': 89.14915884678211,
+  'final_accuracy': 0.5536,
+  'accuracy_retention': 65.86555621653777,
+  'compression_ratio': 9.215875395092704,
+  'pruned_params': 30689},
+ {'keep_ratio': 0.1,
+  'actual_reduction': 92.1803511699773,
+  'final_accuracy': 0.4451,
+  'accuracy_retention': 52.95657346817371,
+  'compression_ratio': 12.788298064749503,
+  'pruned_params': 22116}]
+
+
+
+--- 20 magn + reg 
+
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 285
+Paramètres avant: 282,826
+Paramètres après: 230,049
+Réduction RÉELLE: 18.7%
+Accuracy avant fine-tuning: 0.7963
+Fine-tuning...
+  Epoch 1: Val Acc = 0.8135
+  Epoch 2: Val Acc = 0.8040
+  Epoch 4: Val Acc = 0.8150
+Accuracy finale: 0.8086
+Rétention accuracy: 96.2%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 254
+Paramètres avant: 282,826
+Paramètres après: 188,452
+Réduction RÉELLE: 33.4%
+Accuracy avant fine-tuning: 0.7320
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7952
+  Epoch 2: Val Acc = 0.8043
+  Epoch 4: Val Acc = 0.8061
+Accuracy finale: 0.8045
+Rétention accuracy: 95.7%
+Ratio de compression: 1.5x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 221
+Paramètres avant: 282,826
+Paramètres après: 148,161
+Réduction RÉELLE: 47.6%
+Accuracy avant fine-tuning: 0.4888
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7642
+  Epoch 2: Val Acc = 0.7747
+  Epoch 4: Val Acc = 0.7928
+Accuracy finale: 0.7970
+Rétention accuracy: 94.8%
+Ratio de compression: 1.9x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 190
+Paramètres avant: 282,826
+Paramètres après: 116,036
+Réduction RÉELLE: 59.0%
+Accuracy avant fine-tuning: 0.3423
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7421
+  Epoch 2: Val Acc = 0.7629
+  Epoch 4: Val Acc = 0.7750
+Accuracy finale: 0.7835
+Rétention accuracy: 93.2%
+Ratio de compression: 2.4x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 160
+Paramètres avant: 282,826
+Paramètres après: 89,066
+Réduction RÉELLE: 68.5%
+Accuracy avant fine-tuning: 0.2453
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7307
+  Epoch 2: Val Acc = 0.7393
+  Epoch 4: Val Acc = 0.7677
+Accuracy finale: 0.7606
+Rétention accuracy: 90.5%
+Ratio de compression: 3.2x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 125
+Paramètres avant: 282,826
+Paramètres après: 63,169
+Réduction RÉELLE: 77.7%
+Accuracy avant fine-tuning: 0.1367
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6622
+  Epoch 2: Val Acc = 0.7001
+  Epoch 4: Val Acc = 0.7032
+Accuracy finale: 0.7109
+Rétention accuracy: 84.6%
+Ratio de compression: 4.5x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 94
+Paramètres avant: 282,826
+Paramètres après: 45,124
+Réduction RÉELLE: 84.0%
+Accuracy avant fine-tuning: 0.1089
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5692
+  Epoch 2: Val Acc = 0.6179
+  Epoch 4: Val Acc = 0.6533
+Accuracy finale: 0.6618
+Rétention accuracy: 78.7%
+Ratio de compression: 6.3x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 61
+Paramètres avant: 282,826
+Paramètres après: 30,689
+Réduction RÉELLE: 89.1%
+Accuracy avant fine-tuning: 0.0999
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4201
+  Epoch 2: Val Acc = 0.4881
+  Epoch 4: Val Acc = 0.5316
+Accuracy finale: 0.5602
+Rétention accuracy: 66.7%
+Ratio de compression: 9.2x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 30
+Paramètres avant: 282,826
+Paramètres après: 22,116
+Réduction RÉELLE: 92.2%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3547
+  Epoch 2: Val Acc = 0.3873
+  Epoch 4: Val Acc = 0.4301
+Accuracy finale: 0.4451
+Rétention accuracy: 53.0%
+Ratio de compression: 12.8x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 18.7% réduction, 96.2% accuracy, 1.2x compression
+Keep 80%: 33.4% réduction, 95.7% accuracy, 1.5x compression
+Keep 70%: 47.6% réduction, 94.8% accuracy, 1.9x compression
+Keep 60%: 59.0% réduction, 93.2% accuracy, 2.4x compression
+Keep 50%: 68.5% réduction, 90.5% accuracy, 3.2x compression
+Keep 40%: 77.7% réduction, 84.6% accuracy, 4.5x compression
+Keep 30%: 84.0% réduction, 78.7% accuracy, 6.3x compression
+Keep 20%: 89.1% réduction, 66.7% accuracy, 9.2x compression
+Keep 10%: 92.2% réduction, 53.0% accuracy, 12.8x compression
+[{'keep_ratio': 0.9,
+  'actual_reduction': 18.66058990333279,
+  'final_accuracy': 0.8086,
+  'accuracy_retention': 96.20464009518143,
+  'compression_ratio': 1.229416341735891,
+  'pruned_params': 230049},
+ {'keep_ratio': 0.8,
+  'actual_reduction': 33.36821932919887,
+  'final_accuracy': 0.8045,
+  'accuracy_retention': 95.71683521713265,
+  'compression_ratio': 1.5007853458705664,
+  'pruned_params': 188452},
+ {'keep_ratio': 0.7,
+  'actual_reduction': 47.61408074222314,
+  'final_accuracy': 0.797,
+  'accuracy_retention': 94.82450922070197,
+  'compression_ratio': 1.9089099020659959,
+  'pruned_params': 148161},
+ {'keep_ratio': 0.6,
+  'actual_reduction': 58.97265456499756,
+  'final_accuracy': 0.7835,
+  'accuracy_retention': 93.21832242712671,
+  'compression_ratio': 2.4373987383225897,
+  'pruned_params': 116036},
+ {'keep_ratio': 0.5,
+  'actual_reduction': 68.50855296189177,
+  'final_accuracy': 0.7606,
+  'accuracy_retention': 90.49375371802499,
+  'compression_ratio': 3.1754653852199493,
+  'pruned_params': 89066},
+ {'keep_ratio': 0.4,
+  'actual_reduction': 77.66506615374824,
+  'final_accuracy': 0.7109,
+  'accuracy_retention': 84.58060678167757,
+  'compression_ratio': 4.477291076319081,
+  'pruned_params': 63169},
+ {'keep_ratio': 0.3,
+  'actual_reduction': 84.04531408003507,
+  'final_accuracy': 0.6618,
+  'accuracy_retention': 78.73884592504461,
+  'compression_ratio': 6.2677510858966405,
+  'pruned_params': 45124},
+ {'keep_ratio': 0.2,
+  'actual_reduction': 89.14915884678211,
+  'final_accuracy': 0.5602,
+  'accuracy_retention': 66.65080309339679,
+  'compression_ratio': 9.215875395092704,
+  'pruned_params': 30689},
+ {'keep_ratio': 0.1,
+  'actual_reduction': 92.1803511699773,
+  'final_accuracy': 0.4451,
+  'accuracy_retention': 52.95657346817371,
+  'compression_ratio': 12.788298064749503,
+  'pruned_params': 22116}]
+
+
+random : 
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 285
+Paramètres avant: 282,826
+Paramètres après: 230,049
+Réduction RÉELLE: 18.7%
+Accuracy avant fine-tuning: 0.7650
+Fine-tuning...
+  Epoch 1: Val Acc = 0.8111
+  Epoch 2: Val Acc = 0.8038
+  Epoch 4: Val Acc = 0.8123
+Accuracy finale: 0.8170
+Rétention accuracy: 97.2%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 254
+Paramètres avant: 282,826
+Paramètres après: 188,452
+Réduction RÉELLE: 33.4%
+Accuracy avant fine-tuning: 0.6838
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7773
+  Epoch 2: Val Acc = 0.7894
+  Epoch 4: Val Acc = 0.7828
+Accuracy finale: 0.8097
+Rétention accuracy: 96.3%
+Ratio de compression: 1.5x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 221
+Paramètres avant: 282,826
+Paramètres après: 148,161
+Réduction RÉELLE: 47.6%
+Accuracy avant fine-tuning: 0.5382
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7754
+  Epoch 2: Val Acc = 0.7803
+  Epoch 4: Val Acc = 0.7966
+Accuracy finale: 0.7930
+Rétention accuracy: 94.3%
+Ratio de compression: 1.9x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 190
+Paramètres avant: 282,826
+Paramètres après: 116,036
+Réduction RÉELLE: 59.0%
+Accuracy avant fine-tuning: 0.3446
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7603
+  Epoch 2: Val Acc = 0.7483
+  Epoch 4: Val Acc = 0.7620
+Accuracy finale: 0.7662
+Rétention accuracy: 91.2%
+Ratio de compression: 2.4x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 160
+Paramètres avant: 282,826
+Paramètres après: 89,066
+Réduction RÉELLE: 68.5%
+Accuracy avant fine-tuning: 0.1423
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7268
+  Epoch 2: Val Acc = 0.7197
+  Epoch 4: Val Acc = 0.7385
+Accuracy finale: 0.7570
+Rétention accuracy: 90.1%
+Ratio de compression: 3.2x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 125
+Paramètres avant: 282,826
+Paramètres après: 63,169
+Réduction RÉELLE: 77.7%
+Accuracy avant fine-tuning: 0.1023
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6519
+  Epoch 2: Val Acc = 0.6740
+  Epoch 4: Val Acc = 0.7031
+Accuracy finale: 0.7036
+Rétention accuracy: 83.7%
+Ratio de compression: 4.5x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 94
+Paramètres avant: 282,826
+Paramètres après: 45,124
+Réduction RÉELLE: 84.0%
+Accuracy avant fine-tuning: 0.1033
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5763
+  Epoch 2: Val Acc = 0.6081
+  Epoch 4: Val Acc = 0.6548
+Accuracy finale: 0.6686
+Rétention accuracy: 79.5%
+Ratio de compression: 6.3x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 61
+Paramètres avant: 282,826
+Paramètres après: 30,689
+Réduction RÉELLE: 89.1%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4562
+  Epoch 2: Val Acc = 0.4959
+  Epoch 4: Val Acc = 0.5306
+Accuracy finale: 0.5335
+Rétention accuracy: 63.5%
+Ratio de compression: 9.2x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 30
+Paramètres avant: 282,826
+Paramètres après: 22,116
+Réduction RÉELLE: 92.2%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3355
+  Epoch 2: Val Acc = 0.3789
+  Epoch 4: Val Acc = 0.4126
+Accuracy finale: 0.4126
+Rétention accuracy: 49.1%
+Ratio de compression: 12.8x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 18.7% réduction, 97.2% accuracy, 1.2x compression
+Keep 80%: 33.4% réduction, 96.3% accuracy, 1.5x compression
+Keep 70%: 47.6% réduction, 94.3% accuracy, 1.9x compression
+Keep 60%: 59.0% réduction, 91.2% accuracy, 2.4x compression
+Keep 50%: 68.5% réduction, 90.1% accuracy, 3.2x compression
+Keep 40%: 77.7% réduction, 83.7% accuracy, 4.5x compression
+Keep 30%: 84.0% réduction, 79.5% accuracy, 6.3x compression
+Keep 20%: 89.1% réduction, 63.5% accuracy, 9.2x compression
+Keep 10%: 92.2% réduction, 49.1% accuracy, 12.8x compression
+[{'keep_ratio': 0.9,
+  'actual_reduction': 18.66058990333279,
+  'final_accuracy': 0.817,
+  'accuracy_retention': 97.20404521118381,
+  'compression_ratio': 1.229416341735891,
+  'pruned_params': 230049},
+ {'keep_ratio': 0.8,
+  'actual_reduction': 33.36821932919887,
+  'final_accuracy': 0.8097,
+  'accuracy_retention': 96.33551457465794,
+  'compression_ratio': 1.5007853458705664,
+  'pruned_params': 188452},
+ {'keep_ratio': 0.7,
+  'actual_reduction': 47.61408074222314,
+  'final_accuracy': 0.793,
+  'accuracy_retention': 94.3486020226056,
+  'compression_ratio': 1.9089099020659959,
+  'pruned_params': 148161},
+ {'keep_ratio': 0.6,
+  'actual_reduction': 58.97265456499756,
+  'final_accuracy': 0.7662,
+  'accuracy_retention': 91.1600237953599,
+  'compression_ratio': 2.4373987383225897,
+  'pruned_params': 116036},
+ {'keep_ratio': 0.5,
+  'actual_reduction': 68.50855296189177,
+  'final_accuracy': 0.757,
+  'accuracy_retention': 90.06543723973824,
+  'compression_ratio': 3.1754653852199493,
+  'pruned_params': 89066},
+ {'keep_ratio': 0.4,
+  'actual_reduction': 77.66506615374824,
+  'final_accuracy': 0.7036,
+  'accuracy_retention': 83.7120761451517,
+  'compression_ratio': 4.477291076319081,
+  'pruned_params': 63169},
+ {'keep_ratio': 0.3,
+  'actual_reduction': 84.04531408003507,
+  'final_accuracy': 0.6686,
+  'accuracy_retention': 79.54788816180844,
+  'compression_ratio': 6.2677510858966405,
+  'pruned_params': 45124},
+ {'keep_ratio': 0.2,
+  'actual_reduction': 89.14915884678211,
+  'final_accuracy': 0.5335,
+  'accuracy_retention': 63.47412254610351,
+  'compression_ratio': 9.215875395092704,
+  'pruned_params': 30689},
+ {'keep_ratio': 0.1,
+  'actual_reduction': 92.1803511699773,
+  'final_accuracy': 0.4126,
+  'accuracy_retention': 49.08982748364069,
+  'compression_ratio': 12.788298064749503,
+  'pruned_params': 22116}]		
+
+L1
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 285
+Paramètres avant: 282,826
+Paramètres après: 230,049
+Réduction RÉELLE: 18.7%
+Accuracy avant fine-tuning: 0.7355
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7995
+  Epoch 2: Val Acc = 0.8051
+  Epoch 4: Val Acc = 0.8054
+Accuracy finale: 0.8108
+Rétention accuracy: 96.5%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 254
+Paramètres avant: 282,826
+Paramètres après: 188,452
+Réduction RÉELLE: 33.4%
+Accuracy avant fine-tuning: 0.6386
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7904
+  Epoch 2: Val Acc = 0.7931
+  Epoch 4: Val Acc = 0.8029
+Accuracy finale: 0.8033
+Rétention accuracy: 95.6%
+Ratio de compression: 1.5x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 221
+Paramètres avant: 282,826
+Paramètres après: 148,161
+Réduction RÉELLE: 47.6%
+Accuracy avant fine-tuning: 0.5349
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7642
+  Epoch 2: Val Acc = 0.7670
+  Epoch 4: Val Acc = 0.7903
+Accuracy finale: 0.7794
+Rétention accuracy: 92.7%
+Ratio de compression: 1.9x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 190
+Paramètres avant: 282,826
+Paramètres après: 116,036
+Réduction RÉELLE: 59.0%
+Accuracy avant fine-tuning: 0.3188
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7366
+  Epoch 2: Val Acc = 0.7637
+  Epoch 4: Val Acc = 0.7535
+Accuracy finale: 0.7701
+Rétention accuracy: 91.6%
+Ratio de compression: 2.4x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 160
+Paramètres avant: 282,826
+Paramètres après: 89,066
+Réduction RÉELLE: 68.5%
+Accuracy avant fine-tuning: 0.1546
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7143
+  Epoch 2: Val Acc = 0.7326
+  Epoch 4: Val Acc = 0.7381
+Accuracy finale: 0.7525
+Rétention accuracy: 89.5%
+Ratio de compression: 3.2x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 125
+Paramètres avant: 282,826
+Paramètres après: 63,169
+Réduction RÉELLE: 77.7%
+Accuracy avant fine-tuning: 0.1076
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6548
+  Epoch 2: Val Acc = 0.6517
+  Epoch 4: Val Acc = 0.6997
+Accuracy finale: 0.7007
+Rétention accuracy: 83.4%
+Ratio de compression: 4.5x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 94
+Paramètres avant: 282,826
+Paramètres après: 45,124
+Réduction RÉELLE: 84.0%
+Accuracy avant fine-tuning: 0.0999
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5372
+  Epoch 2: Val Acc = 0.5912
+  Epoch 4: Val Acc = 0.6461
+Accuracy finale: 0.6473
+Rétention accuracy: 77.0%
+Ratio de compression: 6.3x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 61
+Paramètres avant: 282,826
+Paramètres après: 30,689
+Réduction RÉELLE: 89.1%
+Accuracy avant fine-tuning: 0.1081
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4645
+  Epoch 2: Val Acc = 0.4855
+  Epoch 4: Val Acc = 0.5554
+Accuracy finale: 0.5436
+Rétention accuracy: 64.7%
+Ratio de compression: 9.2x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 30
+Paramètres avant: 282,826
+Paramètres après: 22,116
+Réduction RÉELLE: 92.2%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3504
+  Epoch 2: Val Acc = 0.4014
+  Epoch 4: Val Acc = 0.4254
+Accuracy finale: 0.4302
+Rétention accuracy: 51.2%
+Ratio de compression: 12.8x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 18.7% réduction, 96.5% accuracy, 1.2x compression
+Keep 80%: 33.4% réduction, 95.6% accuracy, 1.5x compression
+Keep 70%: 47.6% réduction, 92.7% accuracy, 1.9x compression
+Keep 60%: 59.0% réduction, 91.6% accuracy, 2.4x compression
+Keep 50%: 68.5% réduction, 89.5% accuracy, 3.2x compression
+Keep 40%: 77.7% réduction, 83.4% accuracy, 4.5x compression
+Keep 30%: 84.0% réduction, 77.0% accuracy, 6.3x compression
+Keep 20%: 89.1% réduction, 64.7% accuracy, 9.2x compression
+Keep 10%: 92.2% réduction, 51.2% accuracy, 12.8x compression
+[{'keep_ratio': 0.9,
+  'actual_reduction': 18.66058990333279,
+  'final_accuracy': 0.8108,
+  'accuracy_retention': 96.46638905413444,
+  'compression_ratio': 1.229416341735891,
+  'pruned_params': 230049},
+ {'keep_ratio': 0.8,
+  'actual_reduction': 33.36821932919887,
+  'final_accuracy': 0.8033,
+  'accuracy_retention': 95.57406305770375,
+  'compression_ratio': 1.5007853458705664,
+  'pruned_params': 188452},
+ {'keep_ratio': 0.7,
+  'actual_reduction': 47.61408074222314,
+  'final_accuracy': 0.7794,
+  'accuracy_retention': 92.73051754907793,
+  'compression_ratio': 1.9089099020659959,
+  'pruned_params': 148161},
+ {'keep_ratio': 0.6,
+  'actual_reduction': 58.97265456499756,
+  'final_accuracy': 0.7701,
+  'accuracy_retention': 91.62403331350386,
+  'compression_ratio': 2.4373987383225897,
+  'pruned_params': 116036},
+ {'keep_ratio': 0.5,
+  'actual_reduction': 68.50855296189177,
+  'final_accuracy': 0.7525,
+  'accuracy_retention': 89.53004164187982,
+  'compression_ratio': 3.1754653852199493,
+  'pruned_params': 89066},
+ {'keep_ratio': 0.4,
+  'actual_reduction': 77.66506615374824,
+  'final_accuracy': 0.7007,
+  'accuracy_retention': 83.36704342653182,
+  'compression_ratio': 4.477291076319081,
+  'pruned_params': 63169},
+ {'keep_ratio': 0.3,
+  'actual_reduction': 84.04531408003507,
+  'final_accuracy': 0.6473,
+  'accuracy_retention': 77.01368233194526,
+  'compression_ratio': 6.2677510858966405,
+  'pruned_params': 45124},
+ {'keep_ratio': 0.2,
+  'actual_reduction': 89.14915884678211,
+  'final_accuracy': 0.5436,
+  'accuracy_retention': 64.67578822129684,
+  'compression_ratio': 9.215875395092704,
+  'pruned_params': 30689},
+ {'keep_ratio': 0.1,
+  'actual_reduction': 92.1803511699773,
+  'final_accuracy': 0.4302,
+  'accuracy_retention': 51.18381915526472,
+  'compression_ratio': 12.788298064749503,
+  'pruned_params': 22116}]
+L2
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 285
+Paramètres avant: 282,826
+Paramètres après: 230,049
+Réduction RÉELLE: 18.7%
+Accuracy avant fine-tuning: 0.7435
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7967
+  Epoch 2: Val Acc = 0.8053
+  Epoch 4: Val Acc = 0.8125
+Accuracy finale: 0.8020
+Rétention accuracy: 95.4%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 254
+Paramètres avant: 282,826
+Paramètres après: 188,452
+Réduction RÉELLE: 33.4%
+Accuracy avant fine-tuning: 0.6376
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7801
+  Epoch 2: Val Acc = 0.7837
+  Epoch 4: Val Acc = 0.7954
+Accuracy finale: 0.7993
+Rétention accuracy: 95.1%
+Ratio de compression: 1.5x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 221
+Paramètres avant: 282,826
+Paramètres après: 148,161
+Réduction RÉELLE: 47.6%
+Accuracy avant fine-tuning: 0.5285
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7646
+  Epoch 2: Val Acc = 0.7690
+  Epoch 4: Val Acc = 0.7832
+Accuracy finale: 0.7805
+Rétention accuracy: 92.9%
+Ratio de compression: 1.9x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 190
+Paramètres avant: 282,826
+Paramètres après: 116,036
+Réduction RÉELLE: 59.0%
+Accuracy avant fine-tuning: 0.3437
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7370
+  Epoch 2: Val Acc = 0.7419
+  Epoch 4: Val Acc = 0.7687
+Accuracy finale: 0.7616
+Rétention accuracy: 90.6%
+Ratio de compression: 2.4x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 160
+Paramètres avant: 282,826
+Paramètres après: 89,066
+Réduction RÉELLE: 68.5%
+Accuracy avant fine-tuning: 0.1542
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7081
+  Epoch 2: Val Acc = 0.7308
+  Epoch 4: Val Acc = 0.7429
+Accuracy finale: 0.7397
+Rétention accuracy: 88.0%
+Ratio de compression: 3.2x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 125
+Paramètres avant: 282,826
+Paramètres après: 63,169
+Réduction RÉELLE: 77.7%
+Accuracy avant fine-tuning: 0.1003
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6349
+  Epoch 2: Val Acc = 0.6686
+  Epoch 4: Val Acc = 0.7010
+Accuracy finale: 0.7052
+Rétention accuracy: 83.9%
+Ratio de compression: 4.5x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 94
+Paramètres avant: 282,826
+Paramètres après: 45,124
+Réduction RÉELLE: 84.0%
+Accuracy avant fine-tuning: 0.0995
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5528
+  Epoch 2: Val Acc = 0.5807
+  Epoch 4: Val Acc = 0.6384
+Accuracy finale: 0.6413
+Rétention accuracy: 76.3%
+Ratio de compression: 6.3x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 61
+Paramètres avant: 282,826
+Paramètres après: 30,689
+Réduction RÉELLE: 89.1%
+Accuracy avant fine-tuning: 0.1002
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4458
+  Epoch 2: Val Acc = 0.4979
+  Epoch 4: Val Acc = 0.5349
+Accuracy finale: 0.5491
+Rétention accuracy: 65.3%
+Ratio de compression: 9.2x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 30
+Paramètres avant: 282,826
+Paramètres après: 22,116
+Réduction RÉELLE: 92.2%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3704
+  Epoch 2: Val Acc = 0.3884
+  Epoch 4: Val Acc = 0.4247
+Accuracy finale: 0.4348
+Rétention accuracy: 51.7%
+Ratio de compression: 12.8x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 18.7% réduction, 95.4% accuracy, 1.2x compression
+Keep 80%: 33.4% réduction, 95.1% accuracy, 1.5x compression
+Keep 70%: 47.6% réduction, 92.9% accuracy, 1.9x compression
+Keep 60%: 59.0% réduction, 90.6% accuracy, 2.4x compression
+Keep 50%: 68.5% réduction, 88.0% accuracy, 3.2x compression
+Keep 40%: 77.7% réduction, 83.9% accuracy, 4.5x compression
+Keep 30%: 84.0% réduction, 76.3% accuracy, 6.3x compression
+Keep 20%: 89.1% réduction, 65.3% accuracy, 9.2x compression
+Keep 10%: 92.2% réduction, 51.7% accuracy, 12.8x compression
+[{'keep_ratio': 0.9,
+  'actual_reduction': 18.66058990333279,
+  'final_accuracy': 0.802,
+  'accuracy_retention': 95.41939321832244,
+  'compression_ratio': 1.229416341735891,
+  'pruned_params': 230049},
+ {'keep_ratio': 0.8,
+  'actual_reduction': 33.36821932919887,
+  'final_accuracy': 0.7993,
+  'accuracy_retention': 95.09815585960737,
+  'compression_ratio': 1.5007853458705664,
+  'pruned_params': 188452},
+ {'keep_ratio': 0.7,
+  'actual_reduction': 47.61408074222314,
+  'final_accuracy': 0.7805,
+  'accuracy_retention': 92.86139202855442,
+  'compression_ratio': 1.9089099020659959,
+  'pruned_params': 148161},
+ {'keep_ratio': 0.6,
+  'actual_reduction': 58.97265456499756,
+  'final_accuracy': 0.7616,
+  'accuracy_retention': 90.61273051754908,
+  'compression_ratio': 2.4373987383225897,
+  'pruned_params': 116036},
+ {'keep_ratio': 0.5,
+  'actual_reduction': 68.50855296189177,
+  'final_accuracy': 0.7397,
+  'accuracy_retention': 88.00713860797144,
+  'compression_ratio': 3.1754653852199493,
+  'pruned_params': 89066},
+ {'keep_ratio': 0.4,
+  'actual_reduction': 77.66506615374824,
+  'final_accuracy': 0.7052,
+  'accuracy_retention': 83.90243902439025,
+  'compression_ratio': 4.477291076319081,
+  'pruned_params': 63169},
+ {'keep_ratio': 0.3,
+  'actual_reduction': 84.04531408003507,
+  'final_accuracy': 0.6413,
+  'accuracy_retention': 76.2998215348007,
+  'compression_ratio': 6.2677510858966405,
+  'pruned_params': 45124},
+ {'keep_ratio': 0.2,
+  'actual_reduction': 89.14915884678211,
+  'final_accuracy': 0.5491,
+  'accuracy_retention': 65.33016061867936,
+  'compression_ratio': 9.215875395092704,
+  'pruned_params': 30689},
+ {'keep_ratio': 0.1,
+  'actual_reduction': 92.1803511699773,
+  'final_accuracy': 0.4348,
+  'accuracy_retention': 51.73111243307555,
+  'compression_ratio': 12.788298064749503,
+  'pruned_params': 22116}]
+Var 
+
+Test de Pruning avec Réduction Effective des Paramètres
+============================================================
+Modèle original: 0.8405 accuracy, 282,826 paramètres
+
+Test avec keep_ratio = 0.9 (90% des canaux)
+----------------------------------------
+Filtres sélectionnés: 285
+Paramètres avant: 282,826
+Paramètres après: 230,049
+Réduction RÉELLE: 18.7%
+Accuracy avant fine-tuning: 0.7414
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7817
+  Epoch 2: Val Acc = 0.8069
+  Epoch 4: Val Acc = 0.8136
+Accuracy finale: 0.8107
+Rétention accuracy: 96.5%
+Ratio de compression: 1.2x
+
+Test avec keep_ratio = 0.8 (80% des canaux)
+----------------------------------------
+Filtres sélectionnés: 254
+Paramètres avant: 282,826
+Paramètres après: 188,452
+Réduction RÉELLE: 33.4%
+Accuracy avant fine-tuning: 0.5368
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7874
+  Epoch 2: Val Acc = 0.7887
+  Epoch 4: Val Acc = 0.8011
+Accuracy finale: 0.8071
+Rétention accuracy: 96.0%
+Ratio de compression: 1.5x
+
+Test avec keep_ratio = 0.7 (70% des canaux)
+----------------------------------------
+Filtres sélectionnés: 221
+Paramètres avant: 282,826
+Paramètres après: 148,161
+Réduction RÉELLE: 47.6%
+Accuracy avant fine-tuning: 0.5372
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7658
+  Epoch 2: Val Acc = 0.7747
+  Epoch 4: Val Acc = 0.7733
+Accuracy finale: 0.7936
+Rétention accuracy: 94.4%
+Ratio de compression: 1.9x
+
+Test avec keep_ratio = 0.6 (60% des canaux)
+----------------------------------------
+Filtres sélectionnés: 190
+Paramètres avant: 282,826
+Paramètres après: 116,036
+Réduction RÉELLE: 59.0%
+Accuracy avant fine-tuning: 0.2973
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7369
+  Epoch 2: Val Acc = 0.7634
+  Epoch 4: Val Acc = 0.7715
+Accuracy finale: 0.7765
+Rétention accuracy: 92.4%
+Ratio de compression: 2.4x
+
+Test avec keep_ratio = 0.5 (50% des canaux)
+----------------------------------------
+Filtres sélectionnés: 160
+Paramètres avant: 282,826
+Paramètres après: 89,066
+Réduction RÉELLE: 68.5%
+Accuracy avant fine-tuning: 0.2050
+Fine-tuning...
+  Epoch 1: Val Acc = 0.7068
+  Epoch 2: Val Acc = 0.7182
+  Epoch 4: Val Acc = 0.7448
+Accuracy finale: 0.7508
+Rétention accuracy: 89.3%
+Ratio de compression: 3.2x
+
+Test avec keep_ratio = 0.4 (40% des canaux)
+----------------------------------------
+Filtres sélectionnés: 125
+Paramètres avant: 282,826
+Paramètres après: 63,169
+Réduction RÉELLE: 77.7%
+Accuracy avant fine-tuning: 0.1003
+Fine-tuning...
+  Epoch 1: Val Acc = 0.6512
+  Epoch 2: Val Acc = 0.6838
+  Epoch 4: Val Acc = 0.7045
+Accuracy finale: 0.6984
+Rétention accuracy: 83.1%
+Ratio de compression: 4.5x
+
+Test avec keep_ratio = 0.3 (30% des canaux)
+----------------------------------------
+Filtres sélectionnés: 94
+Paramètres avant: 282,826
+Paramètres après: 45,124
+Réduction RÉELLE: 84.0%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.5534
+  Epoch 2: Val Acc = 0.6036
+  Epoch 4: Val Acc = 0.6500
+Accuracy finale: 0.6498
+Rétention accuracy: 77.3%
+Ratio de compression: 6.3x
+
+Test avec keep_ratio = 0.2 (20% des canaux)
+----------------------------------------
+Filtres sélectionnés: 61
+Paramètres avant: 282,826
+Paramètres après: 30,689
+Réduction RÉELLE: 89.1%
+Accuracy avant fine-tuning: 0.0993
+Fine-tuning...
+  Epoch 1: Val Acc = 0.4391
+  Epoch 2: Val Acc = 0.4895
+  Epoch 4: Val Acc = 0.5101
+Accuracy finale: 0.5357
+Rétention accuracy: 63.7%
+Ratio de compression: 9.2x
+
+Test avec keep_ratio = 0.1 (10% des canaux)
+----------------------------------------
+Filtres sélectionnés: 30
+Paramètres avant: 282,826
+Paramètres après: 22,116
+Réduction RÉELLE: 92.2%
+Accuracy avant fine-tuning: 0.1000
+Fine-tuning...
+  Epoch 1: Val Acc = 0.3177
+  Epoch 2: Val Acc = 0.3829
+  Epoch 4: Val Acc = 0.4045
+Accuracy finale: 0.4238
+Rétention accuracy: 50.4%
+Ratio de compression: 12.8x
+
+RÉSUMÉ DES RÉSULTATS
+========================================
+Keep 90%: 18.7% réduction, 96.5% accuracy, 1.2x compression
+Keep 80%: 33.4% réduction, 96.0% accuracy, 1.5x compression
+Keep 70%: 47.6% réduction, 94.4% accuracy, 1.9x compression
+Keep 60%: 59.0% réduction, 92.4% accuracy, 2.4x compression
+Keep 50%: 68.5% réduction, 89.3% accuracy, 3.2x compression
+Keep 40%: 77.7% réduction, 83.1% accuracy, 4.5x compression
+Keep 30%: 84.0% réduction, 77.3% accuracy, 6.3x compression
+Keep 20%: 89.1% réduction, 63.7% accuracy, 9.2x compression
+Keep 10%: 92.2% réduction, 50.4% accuracy, 12.8x compression
+[{'keep_ratio': 0.9,
+  'actual_reduction': 18.66058990333279,
+  'final_accuracy': 0.8107,
+  'accuracy_retention': 96.45449137418203,
+  'compression_ratio': 1.229416341735891,
+  'pruned_params': 230049},
+ {'keep_ratio': 0.8,
+  'actual_reduction': 33.36821932919887,
+  'final_accuracy': 0.8071,
+  'accuracy_retention': 96.0261748958953,
+  'compression_ratio': 1.5007853458705664,
+  'pruned_params': 188452},
+ {'keep_ratio': 0.7,
+  'actual_reduction': 47.61408074222314,
+  'final_accuracy': 0.7936,
+  'accuracy_retention': 94.41998810232005,
+  'compression_ratio': 1.9089099020659959,
+  'pruned_params': 148161},
+ {'keep_ratio': 0.6,
+  'actual_reduction': 58.97265456499756,
+  'final_accuracy': 0.7765,
+  'accuracy_retention': 92.38548483045805,
+  'compression_ratio': 2.4373987383225897,
+  'pruned_params': 116036},
+ {'keep_ratio': 0.5,
+  'actual_reduction': 68.50855296189177,
+  'final_accuracy': 0.7508,
+  'accuracy_retention': 89.32778108268887,
+  'compression_ratio': 3.1754653852199493,
+  'pruned_params': 89066},
+ {'keep_ratio': 0.4,
+  'actual_reduction': 77.66506615374824,
+  'final_accuracy': 0.6984,
+  'accuracy_retention': 83.09339678762642,
+  'compression_ratio': 4.477291076319081,
+  'pruned_params': 63169},
+ {'keep_ratio': 0.3,
+  'actual_reduction': 84.04531408003507,
+  'final_accuracy': 0.6498,
+  'accuracy_retention': 77.3111243307555,
+  'compression_ratio': 6.2677510858966405,
+  'pruned_params': 45124},
+ {'keep_ratio': 0.2,
+  'actual_reduction': 89.14915884678211,
+  'final_accuracy': 0.5357,
+  'accuracy_retention': 63.73587150505651,
+  'compression_ratio': 9.215875395092704,
+  'pruned_params': 30689},
+ {'keep_ratio': 0.1,
+  'actual_reduction': 92.1803511699773,
+  'final_accuracy': 0.4238,
+  'accuracy_retention': 50.422367638310526,
+  'compression_ratio': 12.788298064749503,
+  'pruned_params': 22116}]
