@@ -13,11 +13,12 @@ Cette première partie concerne la **conception et l’optimisation** du modèle
 - et l’**évaluation** de cette dernière sur le dataset **CIFAR-10**.
 
 ### Contenu :
-- **`Pruning.pdf`** — rapport détaillant la méthode de pruning et les choix d’architecture ;  
-- **Pruning.ipynb** — démonstration pratique de la méthode de pruning appliquée au modèle.
-- **Conception.pdf**
-- **Entrainement_Evaluation.ipynb**
-
+- **`Pruning.pdf`** — rapport détaillant la méthode de pruning et les choix d’architecture du nouveau modèle ;  
+- **pruning_modele.ipynb** — démonstration pratique de la méthode de pruning appliquée au modèle.
+- **entrainement_evaluation.ipynb** - code d'entrainement et d'évaluation du modèle
+- **outils.ipynb** - Ensemble de fonctions, pour la plupart absentes des autres notebooks, mais qui nous ont permis d’explorer la méthode de **pruning** et son évaluation.
+- **resultats_pruning.xlxs** Tableau récapitulatif de l'ensemble des résultats obtenus pour les différentes méthodes de pruning
+- **resultats_pruning_bruts.txt ** Document enregistrants l'ensemble des résultats brutes pour les différentes méthodes de pruning
 ---
 
 ## ⚙️ Partie 2 — Déploiement sur microcontrôleur
