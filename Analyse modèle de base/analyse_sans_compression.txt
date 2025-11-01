@@ -1,0 +1,204 @@
+ [AI:mnist]  Analyzing model
+ [AI:mnist]  C:/Users/josse/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/10.2.0/Utilities/windows/stedgeai.exe analyze --target stm32l4 --name mnist -m C:/Users/josse/OneDrive/Desktop/cours/ia embarquee/projet_ia_embarquee/dataset/CIFAR10_CNN.h5 --compression none --verbosity 1 --workspace C:/Users/josse/AppData/Local/Temp/mxAI_workspace36670555781280013722212771571949074 --output C:/Users/josse/.stm32cubemx/mnist_output
+ [AI:mnist]  ST Edge AI Core v2.2.0-20266 2adc00962
+ [AI:mnist]  Creating c (debug) info json file C:\Users\josse\.stm32cubemx\mnist_output\mnist_c_info.json
+ [AI:mnist]   
+ [AI:mnist]   Exec/report summary (analyze)
+ [AI:mnist]   -----------------------------------------------------------------------------------------------------------------------
+ [AI:mnist]   model file         :   C:\Users\josse\OneDrive\Desktop\cours\ia embarquee\projet_ia_embarquee\dataset\CIFAR10_CNN.h5   
+ [AI:mnist]   type               :   keras                                                                                           
+ [AI:mnist]   c_name             :   mnist                                                                                           
+ [AI:mnist]   compression        :   none                                                                                            
+ [AI:mnist]   options            :   allocate-inputs, allocate-outputs                                                               
+ [AI:mnist]   optimization       :   balanced                                                                                        
+ [AI:mnist]   target/series      :   stm32l4                                                                                         
+ [AI:mnist]   workspace dir      :   C:\Users\josse\AppData\Local\Temp\mxAI_workspace36670555781280013722212771571949074             
+ [AI:mnist]   output dir         :   C:\Users\josse\.stm32cubemx\mnist_output                                                        
+ [AI:mnist]   model_fmt          :   float                                                                                           
+ [AI:mnist]   model_name         :   CIFAR10_CNN                                                                                     
+ [AI:mnist]   model_hash         :   0xa678a80ac53e5bf1967e4890ffb56629                                                              
+ [AI:mnist]   params #           :   1,343,146 items (5.12 MiB)                                                                      
+ [AI:mnist]   -----------------------------------------------------------------------------------------------------------------------
+ [AI:mnist]   input 1/1          :   'input_0', f32(1x32x32x3), 12.00 KBytes, activations                                            
+ [AI:mnist]   output 1/1         :   'dense_2', f32(1x10), 40 Bytes, activations                                                     
+ [AI:mnist]   macc               :   32,997,984                                                                                      
+ [AI:mnist]   weights (ro)       :   5,372,584 B (5.12 MiB) (1 segment)                                                              
+ [AI:mnist]   activations (rw)   :   143,468 B (140.11 KiB) (1 segment) *                                                            
+ [AI:mnist]   ram (total)        :   143,468 B (140.11 KiB) = 143,468 + 0 + 0                                                        
+ [AI:mnist]   -----------------------------------------------------------------------------------------------------------------------
+ [AI:mnist]   (*) 'input'/'output' buffers are allocated in the activations buffer
+ [AI:mnist]  Computing AI RT data/code size (target=stm32l4)..
+ [AI:mnist]   Model name - CIFAR10_CNN
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   m_id   layer (original)                             oshape                 param/size                 macc            connected to
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   0      input_0 (None)                               [b:1,h:32,w:32,c:3]
+ [AI:mnist]          conv2d (Conv2D)                              [b:1,h:32,w:32,c:32]   896/3,584               884,768                 input_0
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   1      activation (Activation)                      [b:1,h:32,w:32,c:32]                            32,768                  conv2d
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   2      batch_normalization (BatchNormalization)     [b:1,h:32,w:32,c:32]   64/256                   65,536              activation
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   3      conv2d_1 (Conv2D)                            [b:1,h:32,w:32,c:32]   9,248/36,992          9,437,216     batch_normalization
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   4      activation_1 (Activation)                    [b:1,h:32,w:32,c:32]                            32,768                conv2d_1
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   6      batch_normalization_1 (BatchNormalization)   [b:1,h:32,w:32,c:32]   64/256                   65,536            activation_1
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   7      max_pooling2d (MaxPooling2D)                 [b:1,h:16,w:16,c:32]                            32,768   batch_normalization_1
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   8      conv2d_2 (Conv2D)                            [b:1,h:16,w:16,c:64]   18,496/73,984         4,718,656           max_pooling2d
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   9      activation_2 (Activation)                    [b:1,h:16,w:16,c:64]                            16,384                conv2d_2
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   10     batch_normalization_2 (BatchNormalization)   [b:1,h:16,w:16,c:64]   128/512                  32,768            activation_2
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   11     conv2d_3 (Conv2D)                            [b:1,h:16,w:16,c:64]   36,928/147,712        9,437,248   batch_normalization_2
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   12     activation_3 (Activation)                    [b:1,h:16,w:16,c:64]                            16,384                conv2d_3
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   14     batch_normalization_3 (BatchNormalization)   [b:1,h:16,w:16,c:64]   128/512                  32,768            activation_3
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   15     max_pooling2d_1 (MaxPooling2D)               [b:1,h:8,w:8,c:64]                              16,384   batch_normalization_3
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   16     conv2d_4 (Conv2D)                            [b:1,h:8,w:8,c:128]    73,856/295,424        4,718,720         max_pooling2d_1
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   17     activation_4 (Activation)                    [b:1,h:8,w:8,c:128]                              8,192                conv2d_4
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   19     batch_normalization_4 (BatchNormalization)   [b:1,h:8,w:8,c:128]    256/1,024                16,384            activation_4
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   20     max_pooling2d_2 (MaxPooling2D)               [b:1,h:4,w:4,c:128]                              8,192   batch_normalization_4
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   21     conv2d_5 (Conv2D)                            [b:1,h:4,w:4,c:128]    147,584/590,336       2,359,424         max_pooling2d_2
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   22     activation_5 (Activation)                    [b:1,h:4,w:4,c:128]                              2,048                conv2d_5
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   24     batch_normalization_5 (BatchNormalization)   [b:1,h:4,w:4,c:128]    256/1,024                 4,096            activation_5
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   25     max_pooling2d_3 (MaxPooling2D)               [b:1,h:2,w:2,c:128]                              2,048   batch_normalization_5
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   26     flatten (Flatten)                            [b:1,c:512]                                                    max_pooling2d_3
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   27     dense_dense (Dense)                          [b:1,c:1024]           525,312/2,101,248       525,312                 flatten
+ [AI:mnist]          dense (Dense)                                [b:1,c:1024]                                     1,024             dense_dense
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   29     dense_1_dense (Dense)                        [b:1,c:512]            524,800/2,099,200       524,800                   dense
+ [AI:mnist]          dense_1 (Dense)                              [b:1,c:512]                                        512           dense_1_dense
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   31     dense_2_dense (Dense)                        [b:1,c:10]             5,130/20,520              5,130                 dense_1
+ [AI:mnist]          dense_2 (Dense)                              [b:1,c:10]                                         150           dense_2_dense
+ [AI:mnist]   ------ -------------------------------------------- ---------------------- ------------------- ----------- -----------------------
+ [AI:mnist]   model: macc=32,997,984 weights=5,372,584 activations=-- io=--
+ [AI:mnist]   Number of operations per c-layer
+ [AI:mnist]   ------- ------ ----------------------------------- ------------ --------------
+ [AI:mnist]   c_id    m_id   name (type)                                  #op           type
+ [AI:mnist]   ------- ------ ----------------------------------- ------------ --------------
+ [AI:mnist]   0       0      conv2d (Conv2D)                          884,768   smul_f32_f32
+ [AI:mnist]   1       1      activation (Nonlinearity)                 32,768     op_f32_f32
+ [AI:mnist]   2       2      batch_normalization (ScaleBias)           65,536   smul_f32_f32
+ [AI:mnist]   3       3      conv2d_1 (Conv2D)                      9,437,216   smul_f32_f32
+ [AI:mnist]   4       4      activation_1 (Nonlinearity)               32,768     op_f32_f32
+ [AI:mnist]   5       6      batch_normalization_1 (ScaleBias)         65,536   smul_f32_f32
+ [AI:mnist]   6       7      max_pooling2d (Pool)                      32,768   smul_f32_f32
+ [AI:mnist]   7       8      conv2d_2 (Conv2D)                      4,718,656   smul_f32_f32
+ [AI:mnist]   8       9      activation_2 (Nonlinearity)               16,384     op_f32_f32
+ [AI:mnist]   9       10     batch_normalization_2 (ScaleBias)         32,768   smul_f32_f32
+ [AI:mnist]   10      11     conv2d_3 (Conv2D)                      9,437,248   smul_f32_f32
+ [AI:mnist]   11      12     activation_3 (Nonlinearity)               16,384     op_f32_f32
+ [AI:mnist]   12      14     batch_normalization_3 (ScaleBias)         32,768   smul_f32_f32
+ [AI:mnist]   13      15     max_pooling2d_1 (Pool)                    16,384   smul_f32_f32
+ [AI:mnist]   14      16     conv2d_4 (Conv2D)                      4,718,720   smul_f32_f32
+ [AI:mnist]   15      17     activation_4 (Nonlinearity)                8,192     op_f32_f32
+ [AI:mnist]   16      19     batch_normalization_4 (ScaleBias)         16,384   smul_f32_f32
+ [AI:mnist]   17      20     max_pooling2d_2 (Pool)                     8,192   smul_f32_f32
+ [AI:mnist]   18      21     conv2d_5 (Conv2D)                      2,359,424   smul_f32_f32
+ [AI:mnist]   19      22     activation_5 (Nonlinearity)                2,048     op_f32_f32
+ [AI:mnist]   20      24     batch_normalization_5 (ScaleBias)          4,096   smul_f32_f32
+ [AI:mnist]   21      25     max_pooling2d_3 (Pool)                     2,048   smul_f32_f32
+ [AI:mnist]   22      27     dense_dense (Dense)                      525,312   smul_f32_f32
+ [AI:mnist]   23      27     dense (Nonlinearity)                       1,024     op_f32_f32
+ [AI:mnist]   24      29     dense_1_dense (Dense)                    524,800   smul_f32_f32
+ [AI:mnist]   25      29     dense_1 (Nonlinearity)                       512     op_f32_f32
+ [AI:mnist]   26      31     dense_2_dense (Dense)                      5,130   smul_f32_f32
+ [AI:mnist]   27      31     dense_2 (Nonlinearity)                       150     op_f32_f32
+ [AI:mnist]   ------- ------ ----------------------------------- ------------ --------------
+ [AI:mnist]   total                                                32,997,984
+ [AI:mnist]   Number of operation types
+ [AI:mnist]   ---------------- ------------ -----------
+ [AI:mnist]   operation type              #           %
+ [AI:mnist]   ---------------- ------------ -----------
+ [AI:mnist]   smul_f32_f32       32,887,754       99.7%
+ [AI:mnist]   op_f32_f32            110,230        0.3%
+ [AI:mnist]   Complexity report (model)
+ [AI:mnist]   ------ ----------------------- ------------------------- ------------------------- ----------
+ [AI:mnist]   m_id   name                    c_macc                    c_rom                     c_id
+ [AI:mnist]   ------ ----------------------- ------------------------- ------------------------- ----------
+ [AI:mnist]   0      input_0                 ||                 2.7%   |                  0.1%   [0]
+ [AI:mnist]   1      activation              |                  0.1%   |                  0.0%   [1]
+ [AI:mnist]   2      batch_normalization     |                  0.2%   |                  0.0%   [2]
+ [AI:mnist]   3      conv2d_1                |||||||||||||||   28.6%   |                  0.7%   [3]
+ [AI:mnist]   4      activation_1            |                  0.1%   |                  0.0%   [4]
+ [AI:mnist]   6      batch_normalization_1   |                  0.2%   |                  0.0%   [5]
+ [AI:mnist]   7      max_pooling2d           |                  0.1%   |                  0.0%   [6]
+ [AI:mnist]   8      conv2d_2                ||||||||          14.3%   |                  1.4%   [7]
+ [AI:mnist]   9      activation_2            |                  0.0%   |                  0.0%   [8]
+ [AI:mnist]   10     batch_normalization_2   |                  0.1%   |                  0.0%   [9]
+ [AI:mnist]   11     conv2d_3                ||||||||||||||||  28.6%   ||                 2.7%   [10]
+ [AI:mnist]   12     activation_3            |                  0.0%   |                  0.0%   [11]
+ [AI:mnist]   14     batch_normalization_3   |                  0.1%   |                  0.0%   [12]
+ [AI:mnist]   15     max_pooling2d_1         |                  0.0%   |                  0.0%   [13]
+ [AI:mnist]   16     conv2d_4                ||||||||          14.3%   |||                5.5%   [14]
+ [AI:mnist]   17     activation_4            |                  0.0%   |                  0.0%   [15]
+ [AI:mnist]   19     batch_normalization_4   |                  0.0%   |                  0.0%   [16]
+ [AI:mnist]   20     max_pooling2d_2         |                  0.0%   |                  0.0%   [17]
+ [AI:mnist]   21     conv2d_5                ||||               7.2%   |||||             11.0%   [18]
+ [AI:mnist]   22     activation_5            |                  0.0%   |                  0.0%   [19]
+ [AI:mnist]   24     batch_normalization_5   |                  0.0%   |                  0.0%   [20]
+ [AI:mnist]   25     max_pooling2d_3         |                  0.0%   |                  0.0%   [21]
+ [AI:mnist]   27     dense_dense             |                  1.6%   ||||||||||||||||  39.1%   [22, 23]
+ [AI:mnist]   29     dense_1_dense           |                  1.6%   |||||||||||||||   39.1%   [24, 25]
+ [AI:mnist]   31     dense_2_dense           |                  0.0%   |                  0.4%   [26, 27]
+ [AI:mnist]   ------ ----------------------- ------------------------- ------------------------- ----------
+ [AI:mnist]   macc=32,997,984 weights=5,372,584 act=143,468 ram_io=0
+ [AI:mnist]   Requested memory size by section - "stm32l4" target
+ [AI:mnist]   ------------------------------ -------- ----------- ------- ---------
+ [AI:mnist]   module                             text      rodata    data       bss
+ [AI:mnist]   ------------------------------ -------- ----------- ------- ---------
+ [AI:mnist]   NetworkRuntime1020_CM4_GCC.a      9,740           0       0         0
+ [AI:mnist]   mnist.o                           1,444         224   8,252       316
+ [AI:mnist]   mnist_data.o                         48          16      88         0
+ [AI:mnist]   lib (toolchain)*                    614          24       0         0
+ [AI:mnist]   ------------------------------ -------- ----------- ------- ---------
+ [AI:mnist]   RT total**                       11,846         264   8,340       316
+ [AI:mnist]   ------------------------------ -------- ----------- ------- ---------
+ [AI:mnist]   weights                               0   5,372,584       0         0
+ [AI:mnist]   activations                           0           0       0   143,468
+ [AI:mnist]   io                                    0           0       0         0
+ [AI:mnist]   ------------------------------ -------- ----------- ------- ---------
+ [AI:mnist]   TOTAL                            11,846   5,372,848   8,340   143,784
+ [AI:mnist]   ------------------------------ -------- ----------- ------- ---------
+ [AI:mnist]   *  toolchain objects (libm/libgcc*)
+ [AI:mnist]   ** RT AI runtime objects (kernels+infrastructure)
+ [AI:mnist]    Summary - "stm32l4" target
+ [AI:mnist]    -------------------------------------------------
+ [AI:mnist]                 FLASH (ro)     %*   RAM (rw)      %
+ [AI:mnist]    -------------------------------------------------
+ [AI:mnist]    RT total         20,450   0.4%      8,656   5.7%
+ [AI:mnist]    -------------------------------------------------
+ [AI:mnist]    TOTAL         5,393,034           152,124
+ [AI:mnist]    -------------------------------------------------
+ [AI:mnist]    *  rt/total
+ [AI:mnist]  Creating txt report file C:\Users\josse\.stm32cubemx\mnist_output\mnist_analyze_report.txt
+ [AI:mnist]  elapsed time (analyze): 22.577s
+ [AI:mnist]  Model file:      CIFAR10_CNN.h5
+ [AI:mnist]  Total Flash:     5393034 B (5.14 MiB)
+ [AI:mnist]      Weights:     5372584 B (5.12 MiB)
+ [AI:mnist]      Library:     20450 B (19.97 KiB)
+ [AI:mnist]  Total Ram:       152124 B (148.56 KiB)
+ [AI:mnist]      Activations: 143468 B (140.11 KiB)
+ [AI:mnist]      Library:     8656 B (8.45 KiB)
+ [AI:mnist]      Input:       12288 B (12.00 KiB included in Activations)
+ [AI:mnist]      Output:      40 B (included in Activations)
+ [AI:mnist]  Done
+ [AI:mnist]  Analyze complete on AI model
+ [AI:mnist]  <font color=red>Required Ram or Flash size for mnist is bigger than available Ram or Flash</font>
