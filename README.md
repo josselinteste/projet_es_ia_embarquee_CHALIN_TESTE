@@ -306,7 +306,7 @@ Les dix sorties du réseau sont ensuite mises à l’échelle en octets et envoy
 Côté PC, un **script Python** envoie les images CIFAR-10 normalisées, lit les réponses de la carte et calcule l’exactitude sur un échantillon.
 Ce test vérifie la cohérence du prétraitement et détecte rapidement des erreurs courantes (ordre des canaux, échelle, etc.).
 
-> *Figure : Résultat accuracy en communication avec la carte*
+![Résultat de l'accuracy sur la carte STM32](Image/accuracy_sur_carte.jpg)
 
 ---
 
