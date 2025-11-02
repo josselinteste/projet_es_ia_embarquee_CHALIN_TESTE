@@ -307,15 +307,6 @@ Le déséquilibre paramétrique vers le classificateur dense (78.6%) suggère un
 
 Cette architecture constitue une **baseline solide et reproductible** pour expérimenter avec différentes techniques de régularisation, stratégies d'entraînement, et modifications architecturales sur le dataset CIFAR-10.
 
----
 
-## 📖 Références
-
-- **VGG Paper** : Simonyan & Zisserman (2014) - "Very Deep Convolutional Networks for Large-Scale Image Recognition"
-- **BatchNorm** : Ioffe & Szegedy (2015) - "Batch Normalization: Accelerating Deep Network Training"
-- **SpatialDropout** : Tompson et al. (2015) - "Efficient Object Localization Using Convolutional Networks"
-- **CIFAR-10** : Krizhevsky (2009) - "Learning Multiple Layers of Features from Tiny Images"
-
----
 
 *Document généré pour analyse architecturale détaillée - VGG11_CIFAR10_simple*
