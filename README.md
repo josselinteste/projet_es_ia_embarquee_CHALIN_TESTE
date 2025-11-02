@@ -281,7 +281,7 @@ Après avoir exporté le modèle entraîné (au format ONNX), X-CUBE-AI a géné
 
 X-CUBE-AI nous a aussi permis de valider l’embarquabilité de notre modèle, grâce à l’interface proposée dans le logiciel :
 
-> *Figure : Résultats analyse modèle*
+![Analyse du modèle final sur STM32](Image/analyse_modele_final_stm32.jpg)
 
 On observe que le modèle respecte bien les limites matérielles de la carte, avec une marge suffisante pour d’autres tâches.
 
