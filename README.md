@@ -33,8 +33,6 @@ La seconde partie porte sur le **déploiement du modèle conçu** sur la cible *
 
 # 🧩 Documentation
 
---- 
-
 ## Analyse du modèle existant
 
 
