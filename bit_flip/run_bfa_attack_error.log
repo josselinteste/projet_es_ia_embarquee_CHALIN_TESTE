@@ -1,9 +1,0 @@
-Exception:
-Traceback (most recent call last):
-  File "C:\Users\Joss\Desktop\ia_es\bit_flip\run_bfa_attack.py", line 418, in <module>
-    main(n_flips=20)
-  File "C:\Users\Joss\Desktop\ia_es\bit_flip\run_bfa_attack.py", line 323, in main
-    model.load_state_dict(state_dict, strict=True)
-  File "C:\Users\Joss\anaconda3\envs\bfa_tuto\Lib\site-packages\torch\nn\modules\module.py", line 2516, in load_state_dict
-    raise TypeError(
-TypeError: Expected state_dict to be dict-like, got <class 'torch.nn.modules.container.Sequential'>.
