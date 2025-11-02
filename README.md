@@ -35,9 +35,50 @@ La seconde partie porte sur le **déploiement du modèle conçu** sur la cible *
 
 Cette troisième partie porte sur l'attaque du modèle déployé sur le microcontrôleur. 
 ### Contenu : 
-- xxxxx
-- xxxxx
-- 
+📁 Structure du dossier
+🔹 Racine
+
+**`run_bfa_attack.py`**
+Script principal exécutant l’attaque BFA sur le modèle de base.
+Contient les fonctions d’initialisation, de gestion des poids, et de lancement de l’attaque.
+
+**`run_bfa_pruned.py`**
+Variante de l’attaque appliquée sur le modèle déjà pruné.
+
+**`run_bfa_attack_error.log`**
+Fichier de log regroupant les erreurs et événements rencontrés lors des exécutions.
+
+**`bfa_attack_vs_random.png`**
+Graphique comparant les performances du modèle après attaque BFA et après attaque aléatoire.
+
+**`weights.pth`**
+Poids initiaux du modèle avant toute attaque.
+
+**`weights_attacked.pth`**
+Poids du modèle après l’application de l’attaque BFA.
+
+**`pruned_model.pth`**
+Version allégée (après pruning) du modèle utilisée dans certains tests.
+
+🔹 Dossier attack/
+
+Contient les modules liés à la mise en œuvre des attaques :
+
+**`BFA.py`**
+Implémentation de la Bit-Flip Attack, permettant de cibler des bits spécifiques dans les poids du modèle pour maximiser la dégradation des performances.
+
+**`random_attack.py`**
+Attaque de référence : applique des flips aléatoires sur les bits des poids du modèle pour comparaison.
+
+**`data_conversion.py`**
+Outils de manipulation et de conversion des poids (float ↔ binaire) pour permettre l’injection de fautes au niveau bit.
+
+📊 Résultats et visualisations
+
+Le graphique **`bfa_attack_vs_random.png`** illustre la différence d’impact entre une attaque aléatoire (Random) et une attaque dirigée (BFA), ciblant les bits les plus sensibles.
+
+---
+
 # 📖 Documentation
 
 ## Analyse du modèle existant
