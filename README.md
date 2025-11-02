@@ -1,9 +1,10 @@
 # Déploiement d’un modèle DNN préentraîné sur le dataset CIFAR-10 pour microcontrôleur
 
 Ce projet étudie le **déploiement d’un modèle de classification** sur une cible embarquée **STM32**.  
-Il est divisé en deux parties principales :
 
 ---
+
+# 🧩 Sommaire 
 
 ## 🧠 Partie 1 — Conception du modèle
 
@@ -31,7 +32,7 @@ La seconde partie porte sur le **déploiement du modèle conçu** sur la cible *
 
 ---
 
-# 🧩 Documentation
+# 📖 Documentation
 
 ## Analyse du modèle existant
 
@@ -45,7 +46,7 @@ Cette analyse présente une architecture VGG-11 modifiée et optimisée pour la 
 - **~1.34 millions de paramètres** (optimisé pour CIFAR-10, bien inférieur aux 132M du VGG-11 original)
 - **Régularisation moderne** : BatchNormalization pour la stabilité et SpatialDropout2D pour la robustesse
 
----
+
 
 ## 🏗️ Architecture
 
@@ -69,7 +70,7 @@ Le modèle suit une structure pyramidale à 4 niveaux où les dimensions spatial
 5. **Bloc 5** : Extraction des caractéristiques de haut niveau (128 filtres) - parties d'objets, motifs complexes
 6. **Bloc 6** : Raffinement final (128 filtres) avec résolution spatiale minimale
 
----
+
 
 ## 📊 Détails de l'architecture
 
@@ -97,7 +98,7 @@ Le classificateur adopte une architecture en pyramide inversée, contrastant ave
 - **Dense 2** : 1024 → 512 (ReLU + Dropout 0.3) - synthèse et compression de l'information discriminante
 - **Sortie** : 512 → 10 (Softmax) - projection vers les 10 classes avec distribution de probabilité
 
----
+
 
 ## 🔧 Innovations architecturales
 
@@ -131,7 +132,7 @@ Cette approche est plus efficace car les valeurs au sein d'une même feature map
 
 Cette séquence présente l'avantage de normaliser les activations après application du dropout, stabilisant ainsi la distribution des données d'entrée de la couche suivante. L'activation ReLU est appliquée avant la normalisation, ce qui permet de normaliser une distribution déjà filtrée par la non-linéarité.
 
----
+
 
 ## 📈 Distribution des paramètres
 
@@ -169,7 +170,7 @@ Le tableau détaillé ci-dessous révèle la distribution complète des paramèt
 - La BatchNormalization ajoute un overhead paramétrique négligeable (0.07%) pour un bénéfice substantiel
 - Meilleur équilibre que certaines architectures CNN basiques où les couches denses peuvent représenter >90% des paramètres
 
----
+
 
 ## ⚠️ Limitations et défis
 
@@ -204,7 +205,7 @@ Ce modèle représente une **adaptation moderne et réussie** du paradigme VGG p
 ✅ **Potentiel de performance élevé** - Estimation de ~90% d'accuracy sur CIFAR-10  
 ✅ **Excellent pour l'apprentissage** - Code simple et maintenable, concepts clairement illustrés  
 
---- 
+---
 
 ## Etude du microcontrôleur cible 
 
@@ -216,6 +217,7 @@ Ce modèle représente une **adaptation moderne et réussie** du paradigme VGG p
 
 ## Conception du nouveau modèle 
 
+Voir partie *Conception du modèle* et l'étude associé. 
 ---
 
 ## Embarquabilité du modèle finale et évaluation
