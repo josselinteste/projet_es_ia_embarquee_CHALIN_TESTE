@@ -381,6 +381,10 @@ Le modèle compressé reste précis (~ 80 %) et totalement exécutable sur STM32
 
 ## 9. Résilience aux corruptions binaires — attaque Bit-Flip
 
+Dans cette section, nous présentons une évaluation expérimentale de la résilience du modèle embarqué face à des corruptions binaires appliquées directement aux poids — communément appelée Bit-Flip Attack (BFA). L’objectif n’est pas d’exposer l’implémentation pas à pas, mais de décrire de manière synthétique la méthode expérimentale, les indicateurs mesurés et les conclusions pratiques que l’on peut en tirer pour un déploiement embarqué.
+
+---
+
 ### 9.1 Principe général de l’attaque
 
 L’attaque par **inversion de bits (Bit-Flip Attack)** consiste à modifier la représentation binaire des poids du réseau (dans leur format quantifié) en inversant un ou plusieurs bits ciblés.
