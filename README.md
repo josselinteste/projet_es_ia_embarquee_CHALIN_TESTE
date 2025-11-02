@@ -455,7 +455,7 @@ Deux observations majeures :
 
 ### Résultats
 
-![Comparaison BFA vs flips aléatoires](Attaquedumodèle/bfa_attack_vs_random.png)
+![Comparaison BFA vs flips aléatoires](Attaque du modèle/bfa_attack_vs_random.png)
 
 Après observation, deux comportements distincts apparaissent :
 
