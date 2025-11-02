@@ -13,20 +13,21 @@ Cette première partie concerne la **conception et l’optimisation** du modèle
 - la **sélection d’une architecture personnalisée**,  
 - et l’**évaluation** de cette dernière sur le dataset **CIFAR-10**.
 
-project/
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── README.md
-├── models/
-│   ├── vgg11_cifar10.py
-│   └── checkpoints/
-├── notebooks/
-│   └── analysis.ipynb
-├── utils/
-│   └── data_loader.py
-├── main.py
-└── requirements.txt
+📁 project
+  📁 data
+    📁 raw
+    📁 processed
+    📄 README.md
+  📁 models
+    📄 vgg11_cifar10.py
+    📁 checkpoints
+  📁 notebooks
+    📄 analysis.ipynb
+  📁 utils
+    📄 data_loader.py
+  📄 main.py
+  📄 requirements.txt
+
 
 
 ### Contenu :
