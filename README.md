@@ -272,7 +272,7 @@ Voir partie *Conception du modèle* et l’étude associée.
 
 ## Embarquabilité du modèle final et évaluation
 
-### 7. Intégration dans un projet embarqué
+### Intégration dans un projet embarqué
 
 #### • Mise en œuvre dans un environnement adapté (STM32CubeIDE, Arduino IDE, etc.)
 
@@ -310,14 +310,14 @@ Ce test vérifie la cohérence du prétraitement et détecte rapidement des erre
 
 ---
 
-## 8. Évaluation
+## Évaluation
 
-### 8.1 Analyse des performances sur cible
+###  Analyse des performances sur cible
 
 L’évaluation a été réalisée sur une cible **STM32L4**, via **ST Edge AI Core v2.2.0** intégré à STM32Cube.AI.
 Les paramètres mesurés : latence d’inférence, consommation mémoire (Flash et RAM), et complexité de calcul (**MACC**).
 
-#### a) Modèle compressé (modèle final)
+#### Modèle compressé (modèle final)
 
 * **Poids totaux** : 148 161 paramètres (591 932 B ≈ 578 KiB)
 * **Activations dynamiques** : 97 048 B (≈ 95 KiB)
@@ -329,7 +329,7 @@ Les paramètres mesurés : latence d’inférence, consommation mémoire (Flash 
 Architecture : blocs **Conv2D – BatchNorm – ReLU – Pooling**, suivis d’un **GlobalAveragePooling** et de deux **Dense**.
 Cette organisation compacte permet une exécution fluide sur STM32L4.
 
-#### b) Modèle d’origine (non compressé)
+#### Modèle d’origine (non compressé)
 
 * **Poids totaux** : 1 343 146 (5 372 584 B ≈ 5,12 MiB)
 * **Activations dynamiques** : 143 468 B (≈ 140 KiB)
@@ -354,7 +354,7 @@ Cette organisation compacte permet une exécution fluide sur STM32L4.
 
 ---
 
-### 8.3 Discussion
+###  Discussion
 
 L’analyse met en évidence une réduction majeure des ressources nécessaires grâce à l’optimisation du modèle.
 Le passage d’un modèle de 5,1 MiB à 0,6 MiB permet une intégration embarquée sans perte significative de structure ni de précision.
@@ -364,7 +364,7 @@ Le compromis obtenu illustre l’efficacité des techniques d’optimisation pou
 
 ---
 
-### 8.4 Précision des modèles
+### Précision des modèles
 
 * **Modèle d’origine (non compressé)** : 84 %
 * **Modèle final embarqué (compressé)** : 79 %
@@ -379,13 +379,13 @@ Le modèle compressé reste précis (~ 80 %) et totalement exécutable sur STM32
 
 ---
 
-## 9. Résilience aux corruptions binaires — attaque Bit-Flip
+## Résilience aux corruptions binaires — attaque Bit-Flip
 
 Dans cette section, nous présentons une évaluation expérimentale de la résilience du modèle embarqué face à des corruptions binaires appliquées directement aux poids — communément appelée Bit-Flip Attack (BFA). L’objectif n’est pas d’exposer l’implémentation pas à pas, mais de décrire de manière synthétique la méthode expérimentale, les indicateurs mesurés et les conclusions pratiques que l’on peut en tirer pour un déploiement embarqué.
 
 ---
 
-### 9.1 Principe général de l’attaque
+###  Principe général de l’attaque
 
 L’attaque par **inversion de bits (Bit-Flip Attack)** consiste à modifier la représentation binaire des poids du réseau (dans leur format quantifié) en inversant un ou plusieurs bits ciblés.
 Lorsque ces inversions portent sur des bits critiques, la performance peut chuter rapidement.
@@ -394,7 +394,7 @@ La BFA vise à localiser et inverser les bits ayant le plus fort impact sur la l
 
 ---
 
-### 9.2 Protocole expérimental synthétique
+###  Protocole expérimental synthétique
 
 * Utilisation du modèle compressé tel que déployé sur la carte.
 * Mesure de la précision de référence (avant altération).
@@ -404,7 +404,7 @@ La BFA vise à localiser et inverser les bits ayant le plus fort impact sur la l
 
 ---
 
-### 9.3 Résultats attendus et interprétation
+### Résultats attendus et interprétation
 
 Deux observations majeures :
 
@@ -413,7 +413,7 @@ Deux observations majeures :
 
 ---
 
-### 9.4 Résultats
+### Résultats
 
 ![Comparaison BFA vs flips aléatoires](bit_flip/bfa_attack_vs_random.png)
 
