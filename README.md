@@ -27,7 +27,7 @@ Cette première partie concerne la **conception et l’optimisation** du modèle
 La seconde partie porte sur le **déploiement du modèle conçu** sur la cible **STM32**.
 
 ### Contenu :
-- **Fichiers d'analyse** des différents modèles obtenus grâce à STM32-CUBE-AI
+- **Fichiers d'analyse** des différents modèles obtenus grâce à STM32-CUBE-AI dans le dossier **`Analyse modèle de base`**
 - **Fichiers de déploiement** pour le microcontrôleur ;  
 - **Modèle converti** et prêt à être intégré sur la plateforme embarquée.
 
