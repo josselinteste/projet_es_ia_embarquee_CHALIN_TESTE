@@ -415,7 +415,7 @@ Deux observations majeures :
 
 ### 9.4 Résultats
 
-> *Figure : comparaison résultats bit-flip*
+![Comparaison BFA vs flips aléatoires](bit_flip/bfa_attack_vs_random.png)
 
 Après observation, deux comportements distincts apparaissent :
 
