@@ -31,6 +31,12 @@ La seconde partie porte sur le **déploiement du modèle conçu** sur la cible *
 - **Modèle converti** et prêt à être intégré sur la plateforme embarquée.
 
 ---
+## 💣 Partie 3 - Attaque du modèle 
+
+Cette troisième partie porte sur l'attaque du modèle déployé sur le microcontrôleur. 
+### Contenu : 
+- xxxxx
+- xxxxx
 
 # 📖 Documentation
 
