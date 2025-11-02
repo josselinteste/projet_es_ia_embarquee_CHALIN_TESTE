@@ -218,6 +218,7 @@ Ce modèle représente une **adaptation moderne et réussie** du paradigme VGG p
 ## Conception du nouveau modèle 
 
 Voir partie *Conception du modèle* et l'étude associé. 
+
 ---
 
 ## Embarquabilité du modèle finale et évaluation
