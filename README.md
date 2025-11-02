@@ -261,31 +261,6 @@ Plusieurs aspects de l'architecture posent des défis pratiques lors de l'entra�
 - **Régularisation** : Équilibrage délicat entre dropout et BatchNorm nécessaire ; trop de régularisation peut sous-fitter, pas assez peut sur-fitter
 - **Temps d'inférence** : Les couches denses massives ralentissent l'inférence comparé à des architectures plus modernes avec Global Average Pooling
 
----
-
-## 🎓 Cas d'usage recommandés
-
-### ✅ Idéal pour
-
-Cette architecture brille dans plusieurs contextes spécifiques où ses caractéristiques sont particulièrement adaptées :
-
-- **Prototypage rapide** : Architecture simple à implémenter, comprendre et déboguer ; excellente pour tester rapidement des idées
-- **Enseignement** : Illustre parfaitement les concepts fondamentaux de CNN (convolution, pooling, normalisation, dropout)
-- **Baseline** : Point de comparaison solide et reproductible pour expérimenter d'autres architectures ou techniques
-- **Datasets similaires** : Images de faible/moyenne résolution (32×32 à 64×64) avec un nombre modéré de classes (10-100)
-- **Ressources limitées** : 1.34M paramètres permet l'entraînement sur GPU grand public (GTX 1660, RTX 3060) avec batchs raisonnables
-
-### ❌ Moins adapté pour
-
-Certains contextes nécessitent des architectures plus spécialisées où ce modèle serait sous-optimal :
-
-- **Résolution élevée** : Images >128×128 nécessiteraient plus de couches et de filtres, augmentant drastiquement les paramètres
-- **Très nombreuses classes** : Au-delà de 100 classes, le classificateur dense deviendrait démesurément lourd
-- **Détection fine** : La perte d'information spatiale via 4 poolings rend difficile la localisation précise d'objets
-- **Production critique** : Architectures state-of-the-art (EfficientNet, Vision Transformer) offrent de meilleures performances
-- **Inférence temps réel** : MobileNet ou SqueezeNet sont significativement plus rapides avec moins de paramètres
-
----
 
 ## 📚 Conclusion
 
@@ -299,14 +274,3 @@ Ce modèle représente une **adaptation moderne et réussie** du paradigme VGG p
 ✅ **Potentiel de performance élevé** - Estimation de ~90% d'accuracy sur CIFAR-10  
 ✅ **Excellent pour l'apprentissage** - Code simple et maintenable, concepts clairement illustrés  
 
-### Axes de contexte
-
-L'architecture se positionne comme un **excellent compromis entre simplicité conceptuelle et performance pratique**. Elle est particulièrement adaptée pour l'enseignement des concepts de deep learning et le prototypage rapide, tout en maintenant un potentiel de performance suffisant pour des applications réelles non critiques.
-
-Le déséquilibre paramétrique vers le classificateur dense (78.6%) suggère une opportunité d'optimisation via des techniques comme le Global Average Pooling, qui pourrait réduire drastiquement le nombre de paramètres tout en maintenant voire améliorant les performances.
-
-Cette architecture constitue une **baseline solide et reproductible** pour expérimenter avec différentes techniques de régularisation, stratégies d'entraînement, et modifications architecturales sur le dataset CIFAR-10.
-
-
-
-*Document généré pour analyse architecturale détaillée - VGG11_CIFAR10_simple*
