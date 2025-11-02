@@ -87,7 +87,7 @@ Le graphique **`bfa_attack_vs_random.png`** illustre la différence d’impact e
 ## Analyse du modèle existant
 
 
-Cette analyse présente l'architecture VG11 modifiée et optimisée pour la classification d'images CIFAR-10. L'architecture VGG, introduite par Simonyan et Zisserman en 2014, utilise réseaux profonds avec exclusivement des filtres de convolutions de petite taille (3×3), principe qui est conservé dans cette adaptation.
+Cette analyse présente l'architecture initial proposé vG11 modifiée et optimisée pour la classification d'images CIFAR-10. L'architecture VGG, introduite par Simonyan et Zisserman en 2014, utilise réseaux profonds avec exclusivement des filtres de convolutions de petite taille (3×3), principe qui est conservé dans cette adaptation.
 
 ### Caractéristiques principales
 
@@ -165,7 +165,7 @@ La formule mathématique appliquée est : `x̂ = (x - μ_batch) / √(σ²_batch
 
 ### SpatialDropout2D
 
-Amélioration significative par rapport au dropout classique, spécifiquement conçue pour les architectures convolutionnelles. Le SpatialDropout2D désactive aléatoirement des feature maps entières plutôt que des neurones individuels :
+Amélioration  par rapport au dropout classique, spécifiquement conçue pour les architectures convolutionnelles. Le SpatialDropout2D désactive aléatoirement des feature maps entières plutôt que des neurones individuels :
 
 | Caractéristique | Dropout Classique | SpatialDropout2D |
 |-----------------|-------------------|------------------|
