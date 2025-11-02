@@ -6,7 +6,18 @@ Ce projet étudie le **déploiement d’un modèle de classification** sur une c
 
 # 🧩 Sommaire 
 
-## 🧠 Partie 1 — Conception du modèle
+## ⚙️ Partie 1 — Déploiement sur microcontrôleur
+
+La seconde partie porte sur le **déploiement du modèle conçu** sur la cible **STM32**.
+
+### Contenu :
+- **Fichiers d'analyse** des différents modèles obtenus grâce à STM32-CUBE-AI dans le dossier **`Analyse modèle de base`**
+- **Fichiers de déploiement** pour le microcontrôleur ;  
+- **Modèle converti** et prêt à être intégré sur la plateforme embarquée.
+
+---
+
+## 🧠 Partie 2 — Conception du modèle
 
 Cette première partie concerne la **conception et l’optimisation** du modèle via :
 - l’élaboration d’une **méthode de pruning**,  
@@ -22,16 +33,7 @@ Cette première partie concerne la **conception et l’optimisation** du modèle
 - **`resultats_pruning_bruts.txt`** Document enregistrants l'ensemble des résultats brutes pour les différentes méthodes de pruning (dossier *Pruning*) 
 ---
 
-## ⚙️ Partie 2 — Déploiement sur microcontrôleur
 
-La seconde partie porte sur le **déploiement du modèle conçu** sur la cible **STM32**.
-
-### Contenu :
-- **Fichiers d'analyse** des différents modèles obtenus grâce à STM32-CUBE-AI dans le dossier **`Analyse modèle de base`**
-- **Fichiers de déploiement** pour le microcontrôleur ;  
-- **Modèle converti** et prêt à être intégré sur la plateforme embarquée.
-
----
 ## 💣 Partie 3 - Attaque du modèle 
 
 Cette troisième partie porte sur l'attaque du modèle déployé sur le microcontrôleur. 
