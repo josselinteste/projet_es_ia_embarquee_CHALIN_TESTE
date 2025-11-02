@@ -36,7 +36,7 @@ La seconde partie porte sur le **déploiement du modèle conçu** sur la cible *
 L’objectif du projet est de **proposer une méthodologie complète** allant de la conception d’un modèle de classification optimisé à son **déploiement sur une cible embarquée à ressources limitées**.
 
 ---
----
+
 # VGG11_CIFAR10_simple - Analyse Architecturale Complète
 
 ## 📋 Vue d'ensemble
