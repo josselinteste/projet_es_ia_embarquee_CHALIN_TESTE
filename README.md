@@ -85,7 +85,7 @@ Le graphique **`bfa_attack_vs_random.png`** illustre la différence d’impact e
 ## Analyse du modèle existant
 
 
-Cette analyse présente une architecture VGG-11 modifiée et optimisée pour la classification d'images CIFAR-10. Le modèle intègre des techniques modernes de régularisation tout en conservant la philosophie architecturale VGG classique. L'architecture VGG, introduite par Simonyan et Zisserman en 2014, a démontré l'efficacité des réseaux profonds utilisant exclusivement des filtres de petite taille (3×3), principe qui est conservé dans cette adaptation.
+Cette analyse présente l'architecture VG11 modifiée et optimisée pour la classification d'images CIFAR-10. L'architecture VGG, introduite par Simonyan et Zisserman en 2014, utilise réseaux profonds avec exclusivement des filtres de convolutions de petite taille (3×3), principe qui est conservé dans cette adaptation.
 
 ### Caractéristiques principales
 
@@ -186,7 +186,7 @@ Cette séquence présente l'avantage de normaliser les activations après applic
 
 ### Répartition par composant
 
-Le tableau détaillé ci-dessous révèle la distribution complète des paramètres à travers l'architecture. On observe un déséquilibre notable vers les couches denses qui concentrent la majorité des paramètres :
+Le tableau détaillé ci-dessous montre la distribution complète des paramètres à travers l'architecture. On observe un déséquilibre n vers les couches denses qui concentrent la majorité des paramètres :
 
 | Composant | Paramètres | Pourcentage | Calcul détaillé |
 |-----------|------------|-------------|-----------------|
@@ -233,7 +233,7 @@ Malgré ses qualités, l'architecture présente plusieurs limitations inhérente
 
 ### Défis computationnels
 
-Plusieurs aspects de l'architecture posent des défis pratiques lors de l'entraînement et du déploiement :
+Plusieurs aspects de l'architecture posent des problèmes  pratiques lors de l'entraînement et du déploiement :
 
 - **Mémoire** : Les feature maps volumineuses des premières couches (32×32×32) nécessitent une mémoire GPU substantielle, surtout avec des batchs de grande taille
 - **BatchNorm** : Dépendance à la taille du batch pour des statistiques fiables ; performance peut se dégrader avec des batchs très petits (<16)
@@ -242,8 +242,6 @@ Plusieurs aspects de l'architecture posent des défis pratiques lors de l'entra�
 
 
 ## 📚 Conclusion
-
-### Synthèse des forces
 
 Ce modèle représente une **adaptation moderne et réussie** du paradigme VGG pour CIFAR-10, avec plusieurs points forts identifiés :
 
