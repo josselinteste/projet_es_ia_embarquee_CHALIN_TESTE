@@ -208,10 +208,8 @@ Ce modèle représente une **adaptation moderne et réussie** du paradigme VGG p
 ✅ **Architecture éprouvée et stable** - Basée sur VGG, une architecture qui a fait ses preuves depuis 2014  
 ✅ **Régularisation multi-niveaux efficace** - Combinaison de SpatialDropout2D, BatchNorm et Dropout classique  
 ✅ **Complexité paramétrique raisonnable** - 1.34M paramètres offre un bon compromis capacité/généralisation  
-✅ **Potentiel de performance élevé** - Estimation de ~90% d'accuracy sur CIFAR-10  
-✅ **Excellent pour l'apprentissage** - Code simple et maintenable, concepts clairement illustrés  
-
-
+✅ **Performance élevé** - 84% d'accuracy sur CIFAR-10  
+ 
 
 ---
 
