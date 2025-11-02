@@ -31,15 +31,12 @@ La seconde partie porte sur le **déploiement du modèle conçu** sur la cible *
 
 ---
 
-## 🧩 Objectif global
+# 🧩 Documentation
 
-L’objectif du projet est de **proposer une méthodologie complète** allant de la conception d’un modèle de classification optimisé à son **déploiement sur une cible embarquée à ressources limitées**.
+--- 
 
----
+## Analyse du modèle existant
 
-# VGG11_CIFAR10_simple - Analyse Architecturale Complète
-
-## 📋 Vue d'ensemble
 
 Cette analyse présente une architecture VGG-11 modifiée et optimisée pour la classification d'images CIFAR-10. Le modèle intègre des techniques modernes de régularisation tout en conservant la philosophie architecturale VGG classique. L'architecture VGG, introduite par Simonyan et Zisserman en 2014, a démontré l'efficacité des réseaux profonds utilisant exclusivement des filtres de petite taille (3×3), principe qui est conservé dans cette adaptation.
 
@@ -209,3 +206,18 @@ Ce modèle représente une **adaptation moderne et réussie** du paradigme VGG p
 ✅ **Potentiel de performance élevé** - Estimation de ~90% d'accuracy sur CIFAR-10  
 ✅ **Excellent pour l'apprentissage** - Code simple et maintenable, concepts clairement illustrés  
 
+--- 
+
+## Etude du microcontrôleur cible 
+
+---
+
+## Evaluation de l'embarquabilité du modèle intiial 
+
+---
+
+## Conception du nouveau modèle 
+
+---
+
+## Embarquabilité du modèle finale et évaluation
